@@ -24,10 +24,10 @@ const CIRCLES = [
 
 const PHOTOS = [
   '/images/IMG_3716-scaled.jpg',
-  '/images/Untitled-design-4.png',
-  '/images/Untitled-design-3.png',
-  '/images/Untitled-design-2.png',
-  '/images/Untitled-design-16-scaled.png',
+  '/images/nrn_arizona_tile_roof_1778277021102.png',
+  '/images/nrn_alumawood_pergola_1778277035458.png',
+  '/images/nrn_arizona_metal_roof_1778277335741.png',
+  '/images/nrn_commercial_flat_roof_1778277348415.png',
   '/images/Screenshot-2026-03-05-at-10.49.04-AM-1.png',
 ];
 
