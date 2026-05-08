@@ -55,7 +55,7 @@ export function Home() {
               <span className="text-nrn-brick">Built for Arizona.</span>
             </h1>
             <p className="text-nrn-muted text-lg md:text-xl mb-10 leading-relaxed max-w-lg font-sans">
-              20+ years protecting Valley homes. Tile, shingle, metal, foam &amp; flat — hand-measured and honestly priced.
+              Tile, shingle, metal, foam &amp; flat roofing specialists. Plus aluminum awnings, Alumawood pergolas, and custom wood patios. Residential &amp; commercial. Financing available.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="tel:4808451833" className="btn-brick flex items-center gap-3 text-base">
@@ -288,7 +288,61 @@ export function Home() {
         </div>
       </section>
 
-      {/* ─── CTA FORM ─────────────────────────────────── */}
+      {/* ─── FAQ ──────────────────────────────────────── */}
+      <section className="py-24 md:py-32 bg-white border-y border-nrn-border">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
+          <motion.div {...fadeUp} className="mb-16">
+            <span className="section-label mb-4 block">Common Questions</span>
+            <h2 className="font-display text-5xl text-nrn-text">
+              Answers You Can <em className="text-nrn-brick">Count On.</em>
+            </h2>
+          </motion.div>
+          <div className="grid md:grid-cols-2 gap-x-16 gap-y-10">
+            {[
+              {
+                q: 'What types of roofing services do you provide?',
+
+                a: 'We specialize in re-roofing for residential and commercial properties, including tile, shingle, metal, and foam/flat roofing systems, silicone and acrylic coating systems, as well as walk decks. We do not install wood shake, but we handle all other major roofing materials with expert craftsmanship.'
+              },
+              {
+                q: 'What cities do you serve?',
+                a: 'We serve all of Southeast Phoenix, Pinal County, and beyond — including Ahwatukee, Carefree, Cave Creek, Chandler, Florence, Fountain Hills, Gilbert, Globe, Gold Canyon, Mesa, Paradise Valley, Phoenix, Queen Creek, San Tan Valley, Scottsdale, and Tempe.'
+              },
+              {
+                q: 'Do you provide free estimates?',
+                a: 'Yes. You can request a free estimate through our website or by calling us. We will visit your property, hand-measure, and provide a clear written quote — no pressure, no gimmicks.'
+              },
+              {
+                q: 'What makes Craven Construction different from other contractors?',
+                a: 'We are a locally owned Arizona company with over two decades of experience. Our priority is excellent customer service and professional workmanship at the best value, using the highest quality materials. We hand-measure every roof and tell you what you actually need — not what makes us the most money.'
+              },
+              {
+                q: 'What custom patios and pergolas do you build?',
+                a: 'We build custom wood patios with all amenities (fans, lights, electrical, and more), aluminum pergolas that look like real wood using AlumaWood, and aluminum awnings for homes and mobile homes.'
+              },
+              {
+                q: 'Do you offer financing?',
+                a: 'Yes! We offer financing through Hearth so you can spread out payments for your new roof, patio, pergola, or awning project. Ask us during your estimate for details. We also offer 18 months same as cash — ask about current promotions.'
+              },
+              {
+                q: 'Is your staff bilingual?',
+                a: 'Yes — we have bilingual staff on hand. Habla Español. Visit NewRoofAZ.com/la-construccion-de-craven/ for our Spanish-language services page.'
+              },
+              {
+                q: 'Do you handle commercial roofing?',
+                a: 'Absolutely. We provide commercial foam, metal and tile roofing services as well as silicone and acrylic coating systems for light industrial buildings, retail properties, office parks, and other commercial structures.'
+              },
+            ].map((faq, i) => (
+              <motion.div key={i} {...fadeUp} transition={{ delay: (i % 4) * 0.08 }} className="border-l-2 border-nrn-brick pl-6">
+                <h3 className="font-display text-xl text-nrn-text mb-3">{faq.q}</h3>
+                <p className="text-nrn-muted text-sm leading-relaxed">{faq.a}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CTA FORM ─────────────────────────────────────── */}
       <section className="py-24 md:py-36 bg-nrn-brick relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <img src="/images/Untitled-design-7.png" alt="" aria-hidden="true" className="w-full h-full object-cover grayscale" />
