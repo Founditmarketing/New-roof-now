@@ -1,69 +1,65 @@
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ChevronLeft, ChevronRight, Phone, ArrowRight, Shield } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Phone, ArrowRight } from 'lucide-react';
 import { SERVICES } from '../constants/services';
 
 export function ServiceDetail() {
   const { id } = useParams();
   const service = SERVICES.find(s => s.id === id);
-
   if (!service) return <Navigate to="/services" />;
-
   const related = SERVICES.filter(s => s.id !== id);
 
   return (
-    <div className="pt-24 min-h-screen">
-      {/* Hero Header */}
-      <section className="relative h-[60vh]">
+    <div className="bg-nrn-cream pt-20 min-h-screen">
+
+      {/* Hero */}
+      <section className="relative h-[55vh] overflow-hidden">
         <img src={service.image} className="w-full h-full object-cover" alt={service.title} />
-        <div className="absolute inset-0 bg-linear-to-t from-roof-charcoal via-roof-charcoal/50 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 py-20">
-          <div className="max-w-screen-xl mx-auto px-6 sm:px-12 lg:px-16">
-            <Link to="/services" className="inline-flex items-center gap-2 bg-black/60 backdrop-blur-sm text-white font-bold uppercase text-xs tracking-widest mb-6 px-4 py-2 hover:bg-roof-red transition-all">
-              <ChevronLeft size={16} /> Back to Services
+        <div className="absolute inset-0 bg-gradient-to-t from-nrn-navy/80 via-nrn-navy/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 pb-14">
+          <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
+            <Link to="/services"
+              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white border border-white/20 text-xs font-bold uppercase tracking-widest px-4 py-2 mb-6 hover:bg-white hover:text-nrn-navy transition-all">
+              <ChevronLeft size={14} /> Back to Services
             </Link>
-            <h1 className="text-4xl md:text-7xl text-white mb-4">{service.title}</h1>
-            <p className="text-stone-300 text-xl max-w-3xl">{service.shortDescription}</p>
+            <h1 className="font-display text-5xl md:text-7xl text-white mb-3">{service.title}</h1>
+            <p className="text-white/70 text-xl max-w-2xl">{service.shortDescription}</p>
           </div>
         </div>
       </section>
 
-      {/* Main Content — full width */}
-      <section className="py-16 md:py-32 bg-white text-stone-900">
-        <div className="max-w-screen-xl mx-auto px-6 sm:px-12 lg:px-16">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 mb-12 lg:mb-24">
-            {/* Service Overview */}
+      {/* Main content */}
+      <section className="py-20 md:py-32 bg-white border-b border-nrn-border">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 mb-16">
             <div>
-              <h2 className="text-4xl mb-8 border-b-2 border-stone-100 pb-4 inline-block text-stone-900">Service Overview</h2>
-              <p className="text-stone-600 text-lg leading-relaxed">{service.fullDescription}</p>
+              <h2 className="font-display text-4xl text-nrn-text mb-8">Service Overview</h2>
+              <p className="text-nrn-muted text-lg leading-relaxed">{service.fullDescription}</p>
             </div>
-
-            {/* Why It Matters */}
             <div>
-              <h2 className="text-4xl mb-8 text-stone-900">Why It Matters</h2>
-              <div className="grid gap-4">
+              <h2 className="font-display text-4xl text-nrn-text mb-8">Why It Matters</h2>
+              <div className="space-y-4">
                 {service.benefits.map((benefit, i) => (
-                  <div key={i} className="flex gap-4 p-5 bg-stone-50 border border-stone-100 text-stone-900">
-                    <div className="w-7 h-7 rounded-full bg-roof-red/10 flex items-center justify-center text-roof-red shrink-0 font-black italic text-sm">!</div>
-                    <span className="text-stone-700 font-medium">{benefit}</span>
+                  <div key={i} className="flex gap-4 p-5 bg-nrn-warm border border-nrn-border">
+                    <div className="w-6 h-6 bg-nrn-brick/10 flex items-center justify-center text-nrn-brick shrink-0 font-bold text-xs rounded-full mt-0.5">!</div>
+                    <span className="text-nrn-text font-medium text-sm">{benefit}</span>
                   </div>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Proven Process — full width */}
-          <div className="bg-roof-charcoal p-12 md:p-20 text-white relative overflow-hidden">
-            <Shield className="absolute top-[-20%] right-[-5%] text-white/5 w-96 h-96" />
-            <h2 className="text-4xl mb-16 relative z-10 text-white font-black uppercase tracking-tight">Our Proven Process</h2>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+          {/* Process */}
+          <div className="bg-nrn-navy p-12 md:p-20 on-navy">
+            <h2 className="font-display text-4xl text-white mb-14">Our Proven Process</h2>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
               {service.process.map((p, idx) => (
-                <div key={idx} className="flex flex-col gap-4 group">
-                  <div className="w-12 h-12 border border-white/20 flex items-center justify-center group-hover:bg-roof-red group-hover:border-roof-red transition-all font-black text-white text-sm">
+                <div key={idx} className="group">
+                  <div className="w-11 h-11 border border-white/20 flex items-center justify-center font-mono-label text-white text-sm mb-5 group-hover:bg-nrn-brick group-hover:border-nrn-brick transition-all">
                     0{idx + 1}
                   </div>
-                  <h4 className="text-lg text-white font-black uppercase tracking-tight">{p.step}</h4>
-                  <p className="text-stone-400 text-sm leading-relaxed">{p.description}</p>
+                  <h4 className="font-display text-xl text-white mb-3">{p.step}</h4>
+                  <p className="text-white/50 text-sm leading-relaxed">{p.description}</p>
                 </div>
               ))}
             </div>
@@ -71,60 +67,49 @@ export function ServiceDetail() {
         </div>
       </section>
 
-      {/* CTA Band */}
-      <section className="py-16 md:py-24 bg-stone-950 border-t border-white/5">
-        <div className="max-w-screen-xl mx-auto px-6 sm:px-12 lg:px-16">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="text-label text-roof-red mb-4 uppercase tracking-[0.3em]">Free Inspection</div>
-              <h2 className="text-4xl md:text-6xl text-white font-black uppercase italic tracking-tighter leading-tight mb-6">
-                Ready to Get <br/><span className="text-roof-red">{service.title}?</span>
-              </h2>
-              <p className="text-stone-400 text-lg leading-relaxed">
-                No pushy sales, no hidden fees. Just honest expert advice and a clear quote for your home.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-6 lg:items-start xl:items-center">
-              <Link
-                to="/contact"
-                className="px-10 py-5 bg-white text-black font-black uppercase text-xs tracking-widest hover:bg-roof-red hover:text-white transition-all shadow-2xl text-center"
-              >
-                Get a Free Quote <ArrowRight size={14} className="inline ml-2" />
-              </Link>
-              <a
-                href="tel:4808451833"
-                className="flex items-center gap-3 group"
-              >
-                <div className="w-12 h-12 border border-white/20 flex items-center justify-center group-hover:bg-roof-red group-hover:border-roof-red transition-all shrink-0">
-                  <Phone size={20} className="text-white" />
-                </div>
-                <div>
-                  <div className="text-[10px] font-black uppercase tracking-widest text-stone-400">Call Us Directly</div>
-                  <div className="text-xl font-black text-white group-hover:text-roof-red transition-colors">(480) 845-1833</div>
-                </div>
-              </a>
-            </div>
+      {/* CTA */}
+      <section className="py-20 bg-nrn-warm border-b border-nrn-border">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-16 grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <span className="section-label mb-4 block">Free Inspection</span>
+            <h2 className="font-display text-5xl text-nrn-text mb-6 leading-tight">
+              Ready for <em className="text-nrn-brick">{service.title}?</em>
+            </h2>
+            <p className="text-nrn-muted text-lg leading-relaxed">
+              No pushy sales, no hidden fees. Just honest expert advice and a clear quote for your home.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-5">
+            <Link to="/contact" className="btn-brick flex items-center gap-2">
+              Get a Free Quote <ArrowRight size={16} />
+            </Link>
+            <a href="tel:4808451833" className="flex items-center gap-3 group">
+              <div className="w-12 h-12 border-2 border-nrn-brick flex items-center justify-center group-hover:bg-nrn-brick transition-colors shrink-0">
+                <Phone size={18} className="text-nrn-brick group-hover:text-white transition-colors" />
+              </div>
+              <div>
+                <div className="text-xs font-bold uppercase tracking-widest text-nrn-muted font-mono-label">Call Directly</div>
+                <div className="text-xl font-bold text-nrn-text group-hover:text-nrn-brick transition-colors font-mono-label">(480) 845-1833</div>
+              </div>
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Related Services */}
-      <section className="py-16 md:py-24 bg-roof-charcoal border-t border-white/5">
-        <div className="max-w-screen-xl mx-auto px-6 sm:px-12 lg:px-16">
-          <div className="text-label text-stone-400 mb-12 uppercase tracking-widest font-black">Related Services</div>
-          <div className="grid md:grid-cols-3 gap-8">
+      {/* Related */}
+      <section className="py-16 bg-nrn-cream">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
+          <span className="section-label mb-8 block">Related Services</span>
+          <div className="grid md:grid-cols-3 gap-6">
             {related.map(s => (
-              <Link
-                key={s.id}
-                to={`/services/${s.id}`}
-                className="group flex flex-col overflow-hidden border border-white/5 hover:border-white/20 transition-all bg-roof-surface/50"
-              >
-                <div className="h-48 overflow-hidden">
-                  <img src={s.image} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" />
+              <Link key={s.id} to={`/services/${s.id}`}
+                className="group border border-nrn-border bg-white overflow-hidden hover:shadow-md transition-shadow">
+                <div className="h-44 overflow-hidden">
+                  <img src={s.image} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 </div>
-                <div className="p-8 flex items-center justify-between">
-                  <span className="font-black text-white uppercase tracking-tight group-hover:text-roof-red transition-colors">{s.title}</span>
-                  <ChevronRight size={16} className="text-stone-600 group-hover:text-roof-red transition-colors" />
+                <div className="p-6 flex items-center justify-between">
+                  <span className="font-display text-xl text-nrn-text group-hover:text-nrn-brick transition-colors">{s.title}</span>
+                  <ChevronRight size={18} className="text-nrn-muted group-hover:text-nrn-brick transition-colors" />
                 </div>
               </Link>
             ))}
@@ -132,15 +117,13 @@ export function ServiceDetail() {
         </div>
       </section>
 
-      {/* Gallery Redirect */}
-      <section className="py-20 bg-stone-50 border-t border-stone-200 text-stone-900">
-        <div className="max-w-screen-xl mx-auto px-6 sm:px-12 lg:px-16 text-center">
-          <h2 className="text-3xl mb-6">See Our {service.title} Work</h2>
-          <Link to="/gallery" className="text-roof-red font-black uppercase text-xs tracking-[0.3em] hover:opacity-80 flex items-center justify-center gap-2">
-            Browse Portfolio <ArrowRight size={16} />
-          </Link>
-        </div>
-      </section>
+      {/* Gallery link */}
+      <div className="py-14 bg-white border-t border-nrn-border text-center">
+        <h2 className="font-display text-3xl text-nrn-text mb-5">See Our {service.title} Work</h2>
+        <Link to="/gallery" className="inline-flex items-center gap-2 text-nrn-brick font-bold text-sm hover:gap-4 transition-all uppercase tracking-widest">
+          Browse Portfolio <ArrowRight size={16} />
+        </Link>
+      </div>
     </div>
   );
 }

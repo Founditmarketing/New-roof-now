@@ -1,135 +1,111 @@
-@import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
-  --font-heading: "Teko", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --color-nrn-cream: #FAF7F2;
+  --color-nrn-warm: #F0E8D8;
+  --color-nrn-brick: #B8572A;
+  --color-nrn-brick-dark: #8C3F1A;
+  --color-nrn-navy: #1E2D40;
+  --color-nrn-navy-mid: #253648;
+  --color-nrn-navy-deep: #111D2A;
+  --color-nrn-gold: #D4961A;
+  --color-nrn-text: #2A1F14;
+  --color-nrn-muted: #7A6A58;
+  --color-nrn-border: #E0D5C5;
 
-  --color-roof-charcoal: #1A1210;
-  --color-roof-surface: #231C17;
-  --color-roof-steel: #2E2520;
-  --color-roof-red: #E8540C;
-  --color-roof-orange: #C41E1E;
-  --color-roof-accent: #E8540C;
-  --color-roof-amber: #F59E0B;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
 }
 
-@layer base {
-  body {
-    @apply bg-roof-charcoal text-white font-sans antialiased;
-    overflow-x: hidden;
-  }
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  * {
-    min-width: 0;
-  }
-  h1, h2, h3 {
-    @apply font-heading font-semibold tracking-wide uppercase leading-[0.95];
-  }
-  h4, h5, h6 {
-    @apply font-sans font-bold uppercase leading-tight;
-  }
+*, *::before, *::after { box-sizing: border-box; }
 
-  .bg-white h1, .bg-white h2, .bg-white h3, .bg-white h4, .bg-white h5, .bg-white h6,
-  .bg-white p, .bg-white span, .bg-white li, .bg-white td, .bg-white th,
-  .bg-stone-50 h1, .bg-stone-50 h2, .bg-stone-50 h3, .bg-stone-50 h4,
-  .bg-stone-50 p, .bg-stone-50 span, .bg-stone-50 li, .bg-stone-50 td,
-  .bg-stone-100 h1, .bg-stone-100 h2, .bg-stone-100 h3, .bg-stone-100 h4,
-  .bg-stone-100 p {
-    color: #1c1917;
-  }
+html { scroll-behavior: smooth; }
 
-  .text-white { color: #ffffff !important; }
-  .text-roof-red { color: #E8540C !important; }
-  .text-roof-orange { color: #C41E1E !important; }
-  .text-roof-amber { color: #F59E0B !important; }
-  .text-stone-400 { color: #A39890 !important; }
-  .text-stone-500 { color: #847A72 !important; }
-  .text-stone-300 { color: #CBC4BD !important; }
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background-color: #FAF7F2;
+  color: #2A1F14;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Warm ember dot grid */
-.industrial-grid {
-  background-image: radial-gradient(circle at 1px 1px, rgba(232, 84, 12, 0.06) 1px, transparent 0);
-  background-size: 32px 32px;
-}
+::selection { background: #B8572A; color: white; }
 
-.text-label {
-  @apply text-[10px] font-black uppercase tracking-[0.3em];
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #F0E8D8; }
+::-webkit-scrollbar-thumb { background: #B8572A; border-radius: 3px; }
 
-.shingle-texture {
-  background-image: repeating-linear-gradient(
-    135deg,
-    rgba(232, 84, 12, 0.02) 0px,
-    rgba(232, 84, 12, 0.02) 1px,
-    transparent 1px,
-    transparent 12px
-  );
-}
+/* Typography helpers */
+.font-display { font-family: 'Fraunces', Georgia, serif; }
+.font-sans-body { font-family: 'DM Sans', system-ui, sans-serif; }
+.font-mono-label { font-family: 'JetBrains Mono', monospace; }
 
-.glass-panel {
-  @apply bg-roof-surface/90 backdrop-blur-md border border-white/10;
-}
-
-/* Ember gradient for borders and underlines */
-.ember-line {
-  background: linear-gradient(90deg, #E8540C, #C41E1E);
-}
-
-/* Warm glow on hover */
-.ember-glow {
-  transition: box-shadow 0.4s ease;
-}
-.ember-glow:hover {
-  box-shadow: 0 0 30px rgba(232, 84, 12, 0.12), 0 0 60px rgba(232, 84, 12, 0.06);
-}
-
-/* Gradient text utility */
-.text-fire {
-  background: linear-gradient(135deg, #E8540C 0%, #C41E1E 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Pulsing ember dot */
-.ember-pulse {
-  box-shadow: 0 0 10px rgba(232, 84, 12, 0.5), 0 0 20px rgba(232, 84, 12, 0.2);
-}
-
-@keyframes shimmer {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(100%); }
-}
-
-@layer utilities {
-  .animate-spin-slow {
-    animation: spin 10s linear infinite;
-  }
-}
-
+/* Marquee */
 @keyframes marquee {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+.marquee-track { animation: marquee 60s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
 
-.marquee-track {
-  animation: marquee 90s linear infinite;
+/* Scrollbar hide */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Service card hover */
+.service-card { transition: box-shadow 0.3s ease, transform 0.3s ease; }
+.service-card:hover {
+  box-shadow: 0 16px 48px rgba(42, 31, 20, 0.12);
+  transform: translateY(-3px);
 }
 
-.marquee-track:hover {
-  animation-play-state: paused;
+/* Brick button */
+.btn-brick {
+  background: #B8572A;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+.btn-brick:hover { background: #8C3F1A; }
+
+/* Outline button */
+.btn-outline {
+  border: 2px solid #2A1F14;
+  color: #2A1F14;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 30px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.btn-outline:hover { background: #2A1F14; color: white; }
+
+/* Section label */
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #B8572A;
 }
 
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
+/* Navy section text fixes */
+.on-navy h1,.on-navy h2,.on-navy h3,.on-navy h4,
+.on-navy p,.on-navy span,.on-navy li { color: inherit; }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+  .service-card:hover { transform: none; }
 }

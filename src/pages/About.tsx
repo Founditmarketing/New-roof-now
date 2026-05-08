@@ -1,148 +1,147 @@
-import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, Award, Users } from 'lucide-react';
+import { motion } from 'motion/react';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.6 }
-};
+const fadeUp = { initial: { opacity: 0, y: 24 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true }, transition: { duration: 0.6 } };
 
 export function About() {
   return (
-    <div className="bg-roof-charcoal pt-40 pb-32">
-      <div className="max-w-screen-xl mx-auto px-6 sm:px-12 lg:px-16">
-        {/* Hero Section */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-28 items-center mb-20 md:mb-44">
-          <motion.div {...fadeInUp}>
-            <div className="text-label text-roof-red mb-6 uppercase tracking-widest font-black">Phoenix, Arizona</div>
-            <h1 className="text-[48px] md:text-[68px] text-white mb-10 leading-[0.95]">
-              Built for <br/>Arizona <span className="text-stone-500 italic">Conditions.</span>
-            </h1>
-            <p className="text-xl text-stone-400 font-medium leading-relaxed mb-8">
-              We started with a single ladder and a promise: treat every home like it's our own. Today, we're the Valley's most trusted name in desert-grade roofing and monsoon resilience.
-            </p>
-            <div className="grid grid-cols-2 gap-8 border-t border-white/10 pt-10">
-              <div>
-                <div className="text-4xl font-black text-white mb-2 italic">100%</div>
-                <div className="text-[10px] text-stone-400 font-black uppercase tracking-widest leading-none">Arizona Owned & Operated</div>
+    <div className="bg-nrn-cream pt-20">
+
+      {/* Hero */}
+      <section className="py-24 md:py-36 bg-white border-b border-nrn-border">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-28 items-center">
+            <motion.div {...fadeUp}>
+              <span className="section-label mb-5 block">Phoenix, Arizona</span>
+              <h1 className="font-display text-6xl md:text-7xl text-nrn-text mb-8 leading-tight">
+                Built for<br /><em className="text-nrn-brick">Arizona</em><br />Conditions.
+              </h1>
+              <p className="text-nrn-muted text-lg leading-relaxed mb-10">
+                With over two decades of residential and commercial experience, Craven Construction is a dedicated roofing contractor providing honest, reliable service across Southeast Phoenix, Pinal County and beyond. From new construction installs to storm damage repairs — we get the job done right the first time.
+              </p>
+              <div className="grid grid-cols-2 gap-8 border-t border-nrn-border pt-10">
+                <div>
+                  <div className="font-display text-4xl text-nrn-brick mb-1">100%</div>
+                  <div className="text-xs font-bold uppercase tracking-widest text-nrn-muted">Arizona Owned &amp; Operated</div>
+                </div>
+                <div>
+                  <div className="font-display text-4xl text-nrn-brick mb-1">Zero</div>
+                  <div className="text-xs font-bold uppercase tracking-widest text-nrn-muted">Zero Pressure — Honesty Only</div>
+                </div>
               </div>
-              <div>
-                <div className="text-4xl font-black text-white mb-2 italic">ZERO</div>
-                <div className="text-[10px] text-stone-400 font-black uppercase tracking-widest leading-none">Zero Pressure — Honesty Only</div>
-              </div>
-            </div>
-          </motion.div>
-          
-          <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="relative h-[400px] lg:h-[600px]">
-             <div className="absolute inset-0 bg-roof-red/20 z-10 mix-blend-overlay" />
-             <img 
-               src="/images/Screenshot-2026-03-05-at-10.49.04-AM-1.png" 
-               alt="New Roof Now — roof ridge and shingles" 
-               className="w-full h-full object-cover object-top"
-             />
-             <div className="glass-panel absolute -bottom-8 left-0 right-0 mx-4 p-8 hidden lg:block">
-                <p className="text-xs text-white leading-relaxed italic uppercase font-bold">
+            </motion.div>
+
+            <motion.div {...fadeUp} transition={{ delay: 0.15 }} className="relative">
+              <img
+                src="/images/Screenshot-2026-03-05-at-10.49.04-AM-1.png"
+                alt="New Roof Now roof ridge and shingles"
+                className="w-full h-[520px] object-cover object-top"
+              />
+              <div className="bg-nrn-warm border border-nrn-border p-8 hidden lg:block mt-0">
+                <p className="text-sm text-nrn-muted leading-relaxed italic">
                   "We believe every home deserves reliable protection at a fair price. From new installs to storm repairs, we treat every customer like family."
                 </p>
-                <div className="mt-4 text-[10px] font-black text-roof-red tracking-[0.2em]">New Roof Now — Phoenix, AZ</div>
-             </div>
-          </motion.div>
+                <div className="mt-4 text-xs font-bold text-nrn-brick uppercase tracking-wider">New Roof Now — Phoenix, AZ</div>
+              </div>
+            </motion.div>
+          </div>
         </div>
+      </section>
 
-        {/* Values - The Industrial Way */}
-        <div className="border-t border-white/10 pt-32">
-          <div className="text-label text-stone-500 mb-16 uppercase tracking-widest font-black">The NRN Standard — Logic & Integrity</div>
-          <div className="grid md:grid-cols-3 gap-px bg-white/10 border border-white/10 shadow-2xl text-stone-900">
+      {/* Values */}
+      <section className="py-24 bg-nrn-cream">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
+          <motion.div {...fadeUp} className="mb-16">
+            <span className="section-label mb-4 block">The NRN Standard</span>
+            <h2 className="font-display text-5xl text-nrn-text">Logic &amp; Integrity.</h2>
+          </motion.div>
+          <div className="grid md:grid-cols-3 gap-8">
             {[
-              { t: 'Safety First', d: 'OSHA compliant on every site. No shortcuts, no risks to your property or our team.', icon: ShieldCheck },
-              { t: 'Premier Gear', d: 'We only use Owens Corning and Atlas Pinnacle shingles — cool-roof rated for the Sonoran Desert.', icon: Award },
-              { t: 'Family Values', d: 'Transparent communication from the first inspection through final cleanup.', icon: Users },
+              { t: 'Safety First', d: 'OSHA compliant on every site. No shortcuts, no risks to your property or our team.' },
+              { t: 'Premier Materials', d: 'We only use Owens Corning and Atlas Pinnacle shingles — cool-roof rated for the Sonoran Desert.' },
+              { t: 'Family Values', d: 'Transparent communication from the first inspection through final cleanup. Always.' },
             ].map((v, i) => (
-              <div key={i} className="bg-roof-charcoal p-12 hover:bg-roof-surface transition-colors group">
-                 <v.icon size={32} className="text-roof-red mb-8 group-hover:scale-110 transition-transform" />
-                 <h3 className="text-2xl text-white mb-6 uppercase tracking-tight font-black">{v.t}</h3>
-                 <p className="text-sm text-stone-500 leading-relaxed font-medium">{v.d}</p>
+              <motion.div key={i} {...fadeUp} transition={{ delay: i * 0.1 }} className="bg-white border border-nrn-border p-10">
+                <div className="w-10 h-10 bg-nrn-brick/10 flex items-center justify-center mb-6">
+                  <CheckCircle2 size={20} className="text-nrn-brick" />
+                </div>
+                <h3 className="font-display text-2xl text-nrn-text mb-4">{v.t}</h3>
+                <p className="text-nrn-muted text-sm leading-relaxed">{v.d}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Valley Commitment */}
+      <section className="py-24 bg-white border-y border-nrn-border">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <span className="section-label mb-4 block">Valley Commitment</span>
+              <h2 className="font-display text-5xl text-nrn-text mb-8 leading-tight">
+                Greater Phoenix<br /><em>Advocates.</em>
+              </h2>
+              <p className="text-nrn-muted text-lg mb-10 leading-relaxed">
+                We don't just work in Arizona — we live here. After every monsoon season we've seen neighbors battle through claims and shoddy repairs. It's why we make insurance advocacy and desert-grade quality non-negotiable.
+              </p>
+              <div className="grid grid-cols-2 gap-4 bg-nrn-warm border border-nrn-border p-6">
+                <div>
+                  <div className="text-xs font-bold text-nrn-muted uppercase mb-2">Primary Area</div>
+                  <p className="text-sm font-semibold text-nrn-text">Phoenix · Scottsdale · Mesa · Chandler · Gilbert · Tempe</p>
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-nrn-muted uppercase mb-2">Extended Area</div>
+                  <p className="text-sm font-semibold text-nrn-text">Ahwatukee · Carefree · Cave Creek · Fountain Hills · Gold Canyon · Queen Creek · San Tan Valley · Paradise Valley</p>
+                </div>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                '/images/Untitled-design-3.png',
+                '/images/Untitled-design-2.png',
+                '/images/Untitled-design-16-scaled.png',
+                '/images/IMG_3716-scaled.jpg',
+              ].map((img, i) => (
+                <div key={i} className={`h-52 overflow-hidden border border-nrn-border ${i % 2 !== 0 ? 'translate-y-6' : ''}`}>
+                  <img src={img} alt="Local project" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Credential bar */}
+      <section className="py-16 bg-nrn-navy on-navy">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-16 text-center">
+          <h3 className="font-display text-3xl text-white mb-10 italic">The New Roof Now Logic</h3>
+          <p className="text-white/60 text-sm md:text-base leading-relaxed mb-10 max-w-2xl mx-auto">
+            Every Arizona home deserves a roof that handles 115°F summers, monsoon downpours, and relentless UV. We deliver that protection at an honest price — no runaround, no hidden fees, no weak materials.
+          </p>
+          <div className="flex flex-wrap justify-center gap-10">
+            {[
+              { l: 'Owens Corning &amp; Atlas', s: 'Trusted Materials' },
+              { l: 'General Liability', s: 'Fully Insured' },
+              { l: 'Licensed &amp; Insured', s: 'Arizona State' },
+            ].map((stat, i) => (
+              <div key={i} className="text-center">
+                <div className="text-xs font-bold uppercase text-nrn-gold mb-2 font-mono-label tracking-widest" dangerouslySetInnerHTML={{ __html: stat.s }} />
+                <div className="text-sm text-white font-bold" dangerouslySetInnerHTML={{ __html: stat.l }} />
               </div>
             ))}
           </div>
         </div>
-
-        {/* Community Roots */}
-        <div className="mt-20 py-20 md:py-40 border-t border-white/10">
-           <div className="grid lg:grid-cols-2 gap-12 lg:gap-28 items-center">
-              <div>
-                 <div className="text-label text-roof-red mb-6 uppercase tracking-widest font-black">Valley Commitment</div>
-                 <h2 className="text-4xl md:text-6xl text-white mb-8 leading-tight italic font-black uppercase tracking-tighter">
-                   Greater <br/><span className="text-white/40">Phoenix</span> <br/>Advocates.
-                 </h2>
-                 <p className="text-stone-400 text-lg mb-10 leading-relaxed">
-                   We don't just work in Arizona — we live here. After every monsoon season we've seen neighbors battle through claims and shoddy repairs. It's why we make insurance advocacy and desert-grade quality non-negotiable. No home in the Valley deserves a cheap roof.
-                 </p>
-                 <div className="grid grid-cols-2 gap-6 bg-white/5 p-8 border-l-2 border-roof-red text-stone-900">
-                    <div>
-                       <div className="text-[10px] font-black text-stone-400 uppercase mb-2">Service Area</div>
-                       <p className="text-xs text-white uppercase font-bold italic">Phoenix • Scottsdale • Mesa • Chandler</p>
-                    </div>
-                    <div>
-                       <div className="text-[10px] font-black text-stone-400 uppercase mb-2">Location Hub</div>
-                       <p className="text-xs text-white uppercase font-bold italic">Tempe • Gilbert • Peoria • Glendale</p>
-                    </div>
-                 </div>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                 {[
-                   "/images/Untitled-design-3.png",
-                   "/images/Untitled-design-2.png",
-                   "/images/Untitled-design-16-scaled.png",
-                   "/images/IMG_3716-scaled.jpg"
-                 ].map((img, i) => (
-                   <div key={i} className={`h-52 md:h-64 overflow-hidden opacity-80 hover:opacity-100 transition-all duration-700 ${i % 2 !== 0 ? 'translate-y-6' : ''}`}>
-                      <img src={img} alt="Local project" className="w-full h-full object-cover" />
-                   </div>
-                 ))}
-              </div>
-           </div>
-        </div>
-
-        {/* Technical Heritage */}
-        <div className="mt-40 p-16 md:p-28 bg-roof-surface border border-white/5 relative overflow-hidden">
-           <div className="industrial-grid absolute inset-0 opacity-5" />
-           <div className="relative z-10 text-center max-w-3xl mx-auto">
-              <h3 className="text-3xl text-white mb-10 italic uppercase tracking-tighter font-black">The New Roof Now Logic</h3>
-              <p className="text-stone-400 text-sm md:text-base leading-relaxed mb-12 italic">
-                Every Arizona home deserves a roof that can handle 115°F summers, monsoon downpours, and relentless UV. We deliver that protection at an honest price — no runaround, no hidden fees, no weak materials.
-              </p>
-              <div className="flex flex-wrap justify-center gap-10">
-                 {[
-                   { l: 'Owens Corning & Atlas', s: 'Trusted Materials' },
-                   { l: 'General Liability', s: 'Fully Insured' },
-                   { l: 'Licensed & Insured', s: 'Arizona State' },
-                 ].map((stat, i) => (
-                   <div key={i} className="text-center">
-                      <div className="text-[9px] font-black uppercase text-roof-red mb-2 tracking-widest">{stat.s}</div>
-                      <div className="text-sm text-white font-black uppercase tracking-tight">{stat.l}</div>
-                   </div>
-                 ))}
-              </div>
-           </div>
-        </div>
-      </div>
+      </section>
 
       {/* CTA Band */}
-      <div className="mt-40 py-24 ember-line relative overflow-hidden">
-        <img src="/images/IMG_3704.png" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover grayscale opacity-20 mix-blend-multiply pointer-events-none" />
-        <div className="max-w-screen-xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10 flex flex-col md:flex-row justify-between items-center gap-10 text-center md:text-left">
-           <h4 className="text-3xl md:text-5xl text-white max-w-2xl leading-[1.1] italic">
-             Ready to experience <br/>the <span className="font-black not-italic underline decoration-4 underline-offset-8">New Roof Now</span> difference?
-           </h4>
-           <Link 
-             to="/contact" 
-             className="px-12 py-6 bg-black text-white font-black uppercase text-xs tracking-widest hover:bg-roof-charcoal hover:border hover:border-white transition-all shadow-2xl shrink-0"
-           >
-             Schedule Free Inspection
-           </Link>
+      <div className="py-20 bg-nrn-warm border-y border-nrn-border">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-16 flex flex-col md:flex-row justify-between items-center gap-8">
+          <h4 className="font-display text-4xl md:text-5xl text-nrn-text max-w-xl leading-tight">
+            Meet the team — <em className="text-nrn-brick">Randy &amp; Kari</em> — and the whole Craven crew.
+          </h4>
+          <Link to="/contact" className="btn-brick shrink-0">Schedule Free Inspection</Link>
         </div>
       </div>
     </div>

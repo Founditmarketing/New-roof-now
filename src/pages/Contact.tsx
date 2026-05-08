@@ -1,125 +1,121 @@
 import { motion } from 'motion/react';
-import { Phone, MapPin, Send } from 'lucide-react';
+import { Phone, Send, MapPin } from 'lucide-react';
 
 export function Contact() {
   return (
-    <div className="bg-roof-charcoal pt-32 pb-24 min-h-screen text-white selection:bg-roof-red selection:text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-20"
-        >
-          <div className="text-label text-stone-400 mb-6 uppercase tracking-widest font-black">Get In Touch</div>
-          <h1 className="text-[40px] md:text-[80px] leading-none mb-8 uppercase tracking-tighter italic font-black">
-            Let's <span className="text-roof-red">Talk</span> Shop.
+    <div className="bg-nrn-cream pt-20 min-h-screen">
+      <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
+
+        {/* Header */}
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="py-20 md:py-28">
+          <span className="section-label mb-5 block">Get In Touch</span>
+          <h1 className="font-display text-6xl md:text-8xl text-nrn-text mb-6 leading-none">
+            Let's Talk<br /><em className="text-nrn-brick">Roofing.</em>
           </h1>
-          <p className="text-xl text-stone-300 max-w-2xl font-medium leading-relaxed">
-            Reach Arizona's most trusted roofers. Free inspections, honest quotes, no pressure.
+          <p className="text-nrn-muted text-xl max-w-xl leading-relaxed">
+            Free inspections, honest quotes, no pressure. Arizona's most trusted roofers are one call away.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-12 gap-px bg-white/5 border border-white/5">
-          {/* Info Side */}
-          <div className="lg:col-span-5 p-8 md:p-12 bg-black flex flex-col justify-between">
-             <div className="space-y-16">
-                <div>
-                   <div className="flex items-center gap-4 mb-6">
-                      <div className="w-10 h-[1px] bg-roof-red" />
-                      <span className="text-[10px] font-black uppercase tracking-[0.3em] text-stone-400">Contact Info</span>
-                   </div>
-                   <div className="space-y-8">
-                      <div className="group">
-                         <div className="text-[9px] font-black uppercase text-stone-400 mb-2 tracking-widest">Phone</div>
-                         <a href="tel:4808451833" className="text-4xl font-black italic tracking-tighter hover:text-roof-red transition-all block">(480) 845-1833</a>
-                         <div className="text-[10px] text-stone-400 mt-2 font-mono uppercase">Available Mon – Sat</div>
-                      </div>
+        {/* Grid */}
+        <div className="grid lg:grid-cols-5 gap-0 border border-nrn-border mb-0">
 
-                      <div className="group">
-                         <div className="text-[9px] font-black uppercase text-stone-400 mb-2 tracking-widest">Address</div>
-                         <div className="text-xl font-bold text-stone-300">Phoenix, AZ & the Greater Valley</div>
-                         <div className="text-[10px] text-stone-400 mt-1 uppercase leading-tight font-medium">Serving Phoenix • Scottsdale • Mesa • Chandler • Tempe • Gilbert</div>
-                      </div>
-                   </div>
-                </div>
-
-                <div className="pt-12 border-t border-white/5">
-                   <div className="grid grid-cols-2 gap-8">
-                      <div>
-                         <div className="text-[8px] font-black uppercase text-stone-500 mb-2">Hours</div>
-                         <div className="text-sm font-black italic uppercase">Mon – Sat, Call Anytime</div>
-                      </div>
-                      <div>
-                         <div className="text-[8px] font-black uppercase text-stone-500 mb-2">Status</div>
-                         <div className="text-xs font-black uppercase text-stone-300">Licensed & Insured — Arizona</div>
-                      </div>
-                   </div>
-                </div>
-             </div>
-          </div>
-
-          {/* Form Side */}
-          <div className="lg:col-span-7 bg-roof-surface/50 p-8 md:p-20 relative overflow-hidden backdrop-blur-3xl">
-             <div className="industrial-grid absolute inset-0 opacity-5 pointer-events-none" />
-             
-             <div className="relative z-10 max-w-xl">
-                <div className="text-2xl font-black uppercase italic mb-2 tracking-tight text-white">Request a Free Inspection</div>
-                <p className="text-stone-400 text-sm mb-10">No obligation. We'll call you back the same day.</p>
-                <form className="space-y-8">
-                   <div className="grid md:grid-cols-2 gap-8">
-                      <div className="space-y-3">
-                         <label className="text-xs font-black uppercase tracking-widest text-stone-300">Your Name</label>
-                         <input type="text" className="w-full bg-transparent border-b border-white/20 px-0 py-2 focus:border-roof-red focus:outline-none transition-all font-bold text-lg text-white placeholder:text-stone-600" placeholder="John Doe" />
-                      </div>
-                      <div className="space-y-3">
-                         <label className="text-xs font-black uppercase tracking-widest text-stone-300">Phone Number</label>
-                         <input type="tel" className="w-full bg-transparent border-b border-white/20 px-0 py-2 focus:border-roof-red focus:outline-none transition-all font-mono text-lg text-white placeholder:text-stone-600" placeholder="(480) xxx-xxxx" />
-                      </div>
-                   </div>
-
-                   <div className="space-y-3">
-                      <label className="text-xs font-black uppercase tracking-widest text-stone-300">Service Needed</label>
-                      <select className="w-full bg-roof-charcoal border-b border-white/20 px-0 py-2 focus:border-roof-red focus:outline-none transition-all font-bold text-lg appearance-none cursor-pointer text-white">
-                         <option className="bg-roof-charcoal">Full Roof Installation</option>
-                         <option className="bg-roof-charcoal">Roof Repair</option>
-                         <option className="bg-roof-charcoal">Insurance Claim Help</option>
-                         <option className="bg-roof-charcoal">Free Inspection</option>
-                      </select>
-                   </div>
-
-                   <div className="space-y-3">
-                      <label className="text-xs font-black uppercase tracking-widest text-stone-300">Details</label>
-                      <textarea rows={3} className="w-full bg-transparent border-b border-white/20 px-0 py-2 focus:border-roof-red focus:outline-none transition-all font-medium text-stone-300 placeholder:text-stone-600" placeholder="Tell us about your roof — leak, storm damage, age, etc." />
-                   </div>
-
-                   <button className="h-20 w-full md:w-auto md:px-16 bg-roof-red text-white hover:bg-roof-charcoal hover:border hover:border-roof-red transition-all group overflow-hidden relative font-black uppercase text-xs tracking-[0.3em]">
-                      <span className="relative z-10 flex items-center justify-center gap-4">
-                        Get My Free Inspection <Send size={14} />
-                      </span>
-                   </button>
-                </form>
-             </div>
-          </div>
-        </div>
-
-        {/* Map area */}
-        <div className="mt-20 h-96 relative overflow-hidden border border-white/5">
-           <iframe
-             src="https://maps.google.com/maps?q=Apache+Junction,+AZ+85120&t=&z=11&ie=UTF8&iwloc=&output=embed"
-             className="w-full h-full border-0 grayscale opacity-60"
-             allowFullScreen
-             loading="lazy"
-             title="New Roof Now AZ — Service Area Map"
-           />
-           <div className="absolute inset-0 bg-linear-to-t from-black via-black/30 to-transparent pointer-events-none" />
-           <div className="absolute bottom-12 left-12 pointer-events-none">
-              <div className="flex items-center gap-2 mb-2">
-                 <div className="w-3 h-3 bg-roof-red rounded-full animate-pulse" />
-                 <span className="text-label text-roof-red">Service Area</span>
+          {/* Info panel */}
+          <div className="lg:col-span-2 bg-nrn-navy p-10 md:p-14 on-navy flex flex-col justify-between gap-12">
+            <div className="space-y-10">
+              <div>
+                <div className="text-xs font-bold uppercase tracking-widest text-nrn-gold font-mono-label mb-4">Phone</div>
+                <a href="tel:4808451833" className="text-4xl font-display text-white hover:text-nrn-gold transition-colors block leading-none">
+                  (480) 845-1833
+                </a>
+                <div className="text-white/40 text-xs mt-2">Available Mon – Sat · Habla Español</div>
               </div>
-              <h4 className="text-2xl font-black italic tracking-tighter uppercase">Phoenix, Arizona <br/><span className="text-stone-300 text-lg">Serving the Greater Valley</span></h4>
-           </div>
+              <div>
+                <div className="text-xs font-bold uppercase tracking-widest text-nrn-gold font-mono-label mb-4">Address</div>
+                <address className="text-white/80 not-italic font-semibold">
+                  710 N Ironwood Dr<br />Apache Junction, AZ 85120
+                </address>
+                <div className="text-white/40 text-xs mt-2">Serving Phoenix · Mesa · Chandler · Gilbert · Tempe · Scottsdale</div>
+              </div>
+              <div>
+                <div className="text-xs font-bold uppercase tracking-widest text-nrn-gold font-mono-label mb-4">Email</div>
+                <a href="mailto:info@newroofaz.com" className="text-white/80 hover:text-white transition-colors font-semibold">
+                  info@newroofaz.com
+                </a>
+              </div>
+            </div>
+
+            <div className="border-t border-white/10 pt-10 grid grid-cols-2 gap-6">
+              <div>
+                <div className="text-xs text-white/30 uppercase tracking-widest mb-1">Hours</div>
+                <div className="text-white text-sm font-bold">Mon – Sat</div>
+              </div>
+              <div>
+                <div className="text-xs text-white/30 uppercase tracking-widest mb-1">License</div>
+                <div className="text-white text-xs font-bold">ROC #311721<br />ROC #315169</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Form panel */}
+          <div className="lg:col-span-3 bg-white p-10 md:p-14">
+            <h2 className="font-display text-3xl text-nrn-text mb-2">Request a Free Inspection</h2>
+            <p className="text-nrn-muted text-sm mb-10">No obligation. We'll call you back the same day.</p>
+            <form className="space-y-8">
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-2">
+                  <label className="text-xs font-bold uppercase tracking-widest text-nrn-muted font-mono-label block">Your Name</label>
+                  <input type="text" placeholder="John Doe"
+                    className="w-full border-b-2 border-nrn-border py-3 bg-transparent text-nrn-text placeholder:text-nrn-border focus:outline-none focus:border-nrn-brick transition-colors font-semibold text-lg" />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold uppercase tracking-widest text-nrn-muted font-mono-label block">Phone Number</label>
+                  <input type="tel" placeholder="(480) xxx-xxxx"
+                    className="w-full border-b-2 border-nrn-border py-3 bg-transparent text-nrn-text placeholder:text-nrn-border focus:outline-none focus:border-nrn-brick transition-colors font-mono-label text-lg" />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <label className="text-xs font-bold uppercase tracking-widest text-nrn-muted font-mono-label block">Service Needed</label>
+                <select className="w-full border-b-2 border-nrn-border py-3 bg-transparent text-nrn-text focus:outline-none focus:border-nrn-brick transition-colors font-semibold text-lg appearance-none cursor-pointer">
+                  <option>Full Roof Installation</option>
+                  <option>Roof Repair</option>
+                  <option>Shade Structure</option>
+                  <option>Commercial Roofing</option>
+                  <option>Insurance Claim Help</option>
+                  <option>Free Inspection</option>
+                </select>
+              </div>
+              <div className="space-y-2">
+                <label className="text-xs font-bold uppercase tracking-widest text-nrn-muted font-mono-label block">Details</label>
+                <textarea rows={3} placeholder="Tell us about your roof — age, concerns, damage, etc."
+                  className="w-full border-b-2 border-nrn-border py-3 bg-transparent text-nrn-text placeholder:text-nrn-border focus:outline-none focus:border-nrn-brick transition-colors resize-none" />
+              </div>
+              <button type="submit"
+                className="flex items-center gap-3 bg-nrn-brick text-white px-10 py-5 font-bold text-sm uppercase tracking-widest hover:bg-nrn-brick-dark transition-colors w-full md:w-auto justify-center">
+                Get My Free Inspection <Send size={16} />
+              </button>
+            </form>
+          </div>
         </div>
+
+        {/* Map */}
+        <div className="h-80 relative overflow-hidden border border-t-0 border-nrn-border mb-0">
+          <iframe
+            src="https://maps.google.com/maps?q=Apache+Junction,+AZ+85120&t=&z=11&ie=UTF8&iwloc=&output=embed"
+            className="w-full h-full border-0 grayscale opacity-70"
+            allowFullScreen loading="lazy"
+            title="New Roof Now AZ — Service Area Map"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-nrn-cream/60 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute bottom-8 left-8 pointer-events-none">
+            <div className="flex items-center gap-2 mb-1">
+              <div className="w-2.5 h-2.5 bg-nrn-brick rounded-full animate-pulse" />
+              <span className="text-xs font-bold uppercase tracking-widest text-nrn-brick font-mono-label">Service Area</span>
+            </div>
+            <h4 className="font-display text-2xl text-nrn-text">Phoenix, Arizona<br /><span className="text-nrn-muted text-lg font-normal">Serving the Greater Valley</span></h4>
+          </div>
+        </div>
+
       </div>
     </div>
   );

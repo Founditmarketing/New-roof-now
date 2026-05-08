@@ -1,124 +1,112 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ChevronDown, Phone, MapPin } from 'lucide-react';
+import { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { Phone, ChevronDown, Menu, X } from 'lucide-react';
 import { SERVICES } from '../../constants/services';
 
 export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    setIsOpen(false);
-    setServicesOpen(false);
-  }, [location]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-roof-surface/95 shadow-2xl py-2 backdrop-blur-md border-b border-white/10 transition-all duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center group">
-            <img
-              src="/logo.png"
-              alt="New Roof Now"
-              className={`object-contain transition-all duration-300 brightness-0 invert ${isScrolled ? 'h-10' : 'h-14'}`}
-            />
-          </Link>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-nrn-cream border-b border-nrn-border">
+      <div className="max-w-screen-xl mx-auto px-6 lg:px-16 h-20 flex items-center justify-between">
 
-          {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-8">
-            <div className="flex items-center gap-6">
-              <Link to="/" className="text-label hover:text-roof-red transition-colors">Home</Link>
-              <Link to="/about" className="text-label hover:text-roof-red transition-colors">About</Link>
-              
-              <div className="relative group">
-                <button 
-                  className="flex items-center gap-1 text-label hover:text-roof-red transition-colors"
-                  onMouseEnter={() => setServicesOpen(true)}
-                >
-                  Services <ChevronDown size={14} />
-                </button>
-                <AnimatePresence>
-                  {(servicesOpen || isOpen) && (
-                    <motion.div 
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      className="absolute top-full left-0 mt-2 w-64 bg-roof-surface shadow-2xl p-4 grid gap-1 border border-white/10"
-                      onMouseLeave={() => setServicesOpen(false)}
-                    >
-                      <Link to="/services" className="text-white font-black text-[10px] uppercase tracking-widest p-2 border-b border-white/5 bg-white/5 mb-2">All Services</Link>
-                      {SERVICES.map(service => (
-                        <Link 
-                          key={service.id} 
-                          to={`/services/${service.id}`}
-                          className="text-stone-300 font-bold text-[10px] uppercase tracking-wider p-2 hover:text-white hover:bg-white/5 transition-all"
-                        >
-                          {service.title}
-                        </Link>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+        {/* Logo */}
+        <Link to="/" className="shrink-0">
+          <img src="/logo.png" alt="New Roof Now" className="h-10 object-contain" />
+        </Link>
+
+        {/* Desktop Nav */}
+        <nav className="hidden lg:flex items-center gap-8">
+          <NavLink to="/" className={({ isActive }) => `text-sm font-semibold transition-colors ${isActive ? 'text-nrn-brick' : 'text-nrn-muted hover:text-nrn-text'}`}>
+            Home
+          </NavLink>
+          <NavLink to="/about" className={({ isActive }) => `text-sm font-semibold transition-colors ${isActive ? 'text-nrn-brick' : 'text-nrn-muted hover:text-nrn-text'}`}>
+            About
+          </NavLink>
+
+          {/* Services dropdown */}
+          <div className="relative"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
+            <button className="flex items-center gap-1 text-sm font-semibold text-nrn-muted hover:text-nrn-text transition-colors">
+              Services <ChevronDown size={14} />
+            </button>
+            {servicesOpen && (
+              <div className="absolute top-full left-0 mt-1 w-56 bg-white border border-nrn-border shadow-xl">
+                {SERVICES.map(s => (
+                  <Link
+                    key={s.id}
+                    to={`/services/${s.id}`}
+                    className="block px-5 py-3 text-sm font-medium text-nrn-text hover:bg-nrn-warm hover:text-nrn-brick transition-colors border-b border-nrn-border last:border-0"
+                  >
+                    {s.title}
+                  </Link>
+                ))}
+                <Link to="/services" className="block px-5 py-3 text-xs font-bold text-nrn-brick uppercase tracking-wider hover:bg-nrn-warm transition-colors">
+                  All Services →
+                </Link>
               </div>
-
-              <Link to="/gallery" className="text-label hover:text-roof-red transition-colors">Gallery</Link>
-              <Link to="/contact" className="text-label hover:text-roof-red transition-colors">Contact</Link>
-            </div>
-
-            <div className="flex items-center gap-4 border-l border-white/10 pl-8">
-              <a href="tel:4808451833" className="text-sm font-mono text-stone-300 hover:text-white transition-colors">(480) 845-1833</a>
-              <Link 
-                to="/contact" 
-                className="bg-roof-red text-white px-5 py-2 font-black text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all"
-              >
-                Get Free Quote
-              </Link>
-            </div>
+            )}
           </div>
 
-          {/* Mobile Toggle */}
-          <button className="lg:hidden text-white p-2 -mr-2" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <NavLink to="/gallery" className={({ isActive }) => `text-sm font-semibold transition-colors ${isActive ? 'text-nrn-brick' : 'text-nrn-muted hover:text-nrn-text'}`}>
+            Gallery
+          </NavLink>
+          <NavLink to="/contact" className={({ isActive }) => `text-sm font-semibold transition-colors ${isActive ? 'text-nrn-brick' : 'text-nrn-muted hover:text-nrn-text'}`}>
+            Contact
+          </NavLink>
+        </nav>
+
+        {/* Desktop CTA */}
+        <div className="hidden lg:flex items-center gap-5">
+          <a href="tel:4808451833" className="flex items-center gap-2 text-nrn-text hover:text-nrn-brick transition-colors">
+            <Phone size={15} className="text-nrn-brick" />
+            <span className="font-mono font-bold text-sm">(480) 845-1833</span>
+          </a>
+          <Link to="/contact" className="bg-nrn-brick text-white px-5 py-2.5 text-sm font-bold hover:bg-nrn-brick-dark transition-colors">
+            Free Inspection
+          </Link>
         </div>
+
+        {/* Mobile hamburger */}
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="lg:hidden text-nrn-text p-1"
+          aria-label="Toggle menu"
+        >
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div 
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white text-roof-charcoal border-b border-stone-100 overflow-hidden"
-          >
-            <div className="px-4 pt-4 pb-8 flex flex-col gap-4">
-              <Link to="/" className="font-heading text-lg">Home</Link>
-              <Link to="/about" className="font-heading text-lg">About</Link>
-              <div className="flex flex-col gap-2 pl-4 border-l-2 border-roof-red">
-                <Link to="/services" className="font-heading text-sm text-stone-400 uppercase">Services</Link>
-                {SERVICES.map(service => (
-                  <Link key={service.id} to={`/services/${service.id}`} className="font-bold">{service.title}</Link>
-                ))}
-              </div>
-              <Link to="/gallery" className="font-heading text-lg">Gallery</Link>
-              <Link to="/contact" className="font-heading text-lg">Contact</Link>
-              <a href="tel:4808451833" className="flex items-center gap-2 font-heading text-roof-red text-xl">
-                <Phone size={20} /> (480) 845-1833
-              </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+      {mobileOpen && (
+        <div className="lg:hidden bg-white border-t border-nrn-border shadow-lg">
+          <nav className="px-6 py-6 space-y-1">
+            {[
+              { to: '/', label: 'Home' },
+              { to: '/about', label: 'About' },
+              { to: '/services', label: 'Services' },
+              { to: '/gallery', label: 'Gallery' },
+              { to: '/contact', label: 'Contact' },
+            ].map(item => (
+              <Link
+                key={item.to}
+                to={item.to}
+                onClick={() => setMobileOpen(false)}
+                className="block py-3 text-base font-semibold text-nrn-text hover:text-nrn-brick border-b border-nrn-border last:border-0 transition-colors"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <div className="px-6 pb-6 flex flex-col gap-3">
+            <a href="tel:4808451833" className="btn-brick text-center">Call (480) 845-1833</a>
+            <Link to="/contact" onClick={() => setMobileOpen(false)} className="btn-outline text-center">Free Inspection</Link>
+          </div>
+        </div>
+      )}
+    </header>
   );
 }
