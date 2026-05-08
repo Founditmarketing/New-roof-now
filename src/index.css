@@ -1,17 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-heading: "Montserrat", sans-serif;
+  --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Teko", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
-  
-  --color-roof-charcoal: #121212;
-  --color-roof-surface: #1A1A1A;
-  --color-roof-steel: #2A2A2A;
-  --color-roof-red: #B22222;
-  --color-roof-orange: #F27D26;
-  --color-roof-accent: #B22222;
+
+  --color-roof-charcoal: #1A1210;
+  --color-roof-surface: #231C17;
+  --color-roof-steel: #2E2520;
+  --color-roof-red: #E8540C;
+  --color-roof-orange: #C41E1E;
+  --color-roof-accent: #E8540C;
+  --color-roof-amber: #F59E0B;
 }
 
 @layer base {
@@ -26,32 +27,34 @@
   * {
     min-width: 0;
   }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-black tracking-tighter uppercase leading-[0.95];
+  h1, h2, h3 {
+    @apply font-heading font-semibold tracking-wide uppercase leading-[0.95];
+  }
+  h4, h5, h6 {
+    @apply font-sans font-bold uppercase leading-tight;
   }
 
-  /* Safety net: any element carrying a light bg automatically gets dark text
-     so headings don't inherit the global text-white from body */
   .bg-white h1, .bg-white h2, .bg-white h3, .bg-white h4, .bg-white h5, .bg-white h6,
   .bg-white p, .bg-white span, .bg-white li, .bg-white td, .bg-white th,
   .bg-stone-50 h1, .bg-stone-50 h2, .bg-stone-50 h3, .bg-stone-50 h4,
   .bg-stone-50 p, .bg-stone-50 span, .bg-stone-50 li, .bg-stone-50 td,
   .bg-stone-100 h1, .bg-stone-100 h2, .bg-stone-100 h3, .bg-stone-100 h4,
   .bg-stone-100 p {
-    color: #1c1917; /* stone-900 */
+    color: #1c1917;
   }
 
-  /* Explicit overrides take priority — keep colored text working */
   .text-white { color: #ffffff !important; }
-  .text-roof-red { color: #B22222 !important; }
-  .text-roof-orange { color: #F27D26 !important; }
-  .text-stone-400 { color: #a8a29e !important; }
-  .text-stone-500 { color: #78716c !important; }
-  .text-stone-300 { color: #d6d3d1 !important; }
+  .text-roof-red { color: #E8540C !important; }
+  .text-roof-orange { color: #C41E1E !important; }
+  .text-roof-amber { color: #F59E0B !important; }
+  .text-stone-400 { color: #A39890 !important; }
+  .text-stone-500 { color: #847A72 !important; }
+  .text-stone-300 { color: #CBC4BD !important; }
 }
 
+/* Warm ember dot grid */
 .industrial-grid {
-  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+  background-image: radial-gradient(circle at 1px 1px, rgba(232, 84, 12, 0.06) 1px, transparent 0);
   background-size: 32px 32px;
 }
 
@@ -62,8 +65,8 @@
 .shingle-texture {
   background-image: repeating-linear-gradient(
     135deg,
-    rgba(0,0,0,0.03) 0px,
-    rgba(0,0,0,0.03) 1px,
+    rgba(232, 84, 12, 0.02) 0px,
+    rgba(232, 84, 12, 0.02) 1px,
     transparent 1px,
     transparent 12px
   );
@@ -71,6 +74,32 @@
 
 .glass-panel {
   @apply bg-roof-surface/90 backdrop-blur-md border border-white/10;
+}
+
+/* Ember gradient for borders and underlines */
+.ember-line {
+  background: linear-gradient(90deg, #E8540C, #C41E1E);
+}
+
+/* Warm glow on hover */
+.ember-glow {
+  transition: box-shadow 0.4s ease;
+}
+.ember-glow:hover {
+  box-shadow: 0 0 30px rgba(232, 84, 12, 0.12), 0 0 60px rgba(232, 84, 12, 0.06);
+}
+
+/* Gradient text utility */
+.text-fire {
+  background: linear-gradient(135deg, #E8540C 0%, #C41E1E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Pulsing ember dot */
+.ember-pulse {
+  box-shadow: 0 0 10px rgba(232, 84, 12, 0.5), 0 0 20px rgba(232, 84, 12, 0.2);
 }
 
 @keyframes shimmer {

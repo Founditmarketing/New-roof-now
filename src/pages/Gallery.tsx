@@ -55,7 +55,7 @@ export function Gallery() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-28"
         >
-          <div className="text-label text-roof-red mb-6 uppercase tracking-widest font-black">Visual Proof — The BPR Portfolio</div>
+          <div className="text-label text-roof-red mb-6 uppercase tracking-widest font-black">Visual Proof — The NRN Portfolio</div>
           <h1 className="text-[56px] md:text-[90px] text-white leading-none mb-8">
             Built To <span className="text-stone-500 italic">Last.</span>
           </h1>
@@ -88,7 +88,7 @@ export function Gallery() {
                   <h3 className="text-xl text-white font-black uppercase tracking-tight">{photo.title}</h3>
                   <div className="h-[1px] w-0 group-hover:w-full bg-roof-red mt-4 transition-all duration-500" />
                   <div className="flex items-center gap-2 mt-4 text-[9px] text-stone-500 font-black uppercase tracking-[0.2em]">
-                    <Camera size={10} /> Louisiana Project Files
+                    <Camera size={10} /> Arizona Project Files
                   </div>
                 </div>
               </div>
@@ -100,7 +100,7 @@ export function Gallery() {
         <div className="grid md:grid-cols-4 gap-px bg-white/5 border border-white/5 mb-40 text-stone-900">
           {[
             { l: 'Google Rating', v: '5.0 ★', s: '19 Verified Reviews' },
-            { l: 'Service Area', v: 'Cenla', s: 'Alexandria & Surrounding Parishes' },
+            { l: 'Service Area', v: 'Valley', s: 'Phoenix & Surrounding Counties' },
             { l: 'Storm Response',    v: '24/7',    s: 'Rapid Tarping Active' },
             { l: 'Materials', v: 'OC + Atlas', s: 'Owens Corning & Atlas Pinnacle' },
           ].map((stat, i) => (
@@ -138,7 +138,7 @@ export function Gallery() {
               Anatomy of a <br /><span className="text-white/40">Storm-Ready</span> <br />Install.
             </h2>
             <p className="text-stone-400 text-lg mb-12 leading-relaxed">
-              We don't just "nail down shingles." Every Best Price Roof follows a strict multi-layer protocol: High-weight synthetic felt, ice/water shields in every valley, and industrial-grade ridge vents for Louisiana's heat.
+              We don't just "nail down shingles." Every New Roof Now install follows a strict multi-layer protocol: Cool-roof rated shingles, high-reflectivity underlayment, and industrial-grade ridge vents engineered for Arizona's extreme attic heat.
             </p>
             <div className="space-y-6">
               {[
@@ -172,7 +172,7 @@ export function Gallery() {
         <div className="text-center py-32 px-8 border-t border-white/10 bg-roof-charcoal">
           <h3 className="text-3xl text-white mb-4 italic uppercase tracking-tighter">See Your Home In Our Next Update?</h3>
           <p className="text-stone-400 text-sm mb-10 uppercase tracking-widest">Every job we finish goes in the portfolio — yours could be next.</p>
-          <Link to="/contact" className="inline-flex items-center gap-3 bg-roof-red text-white px-12 py-6 font-black uppercase text-xs tracking-[0.3em] hover:bg-white hover:text-black transition-all">
+          <Link to="/contact" className="inline-flex items-center gap-3 bg-roof-red text-white px-12 py-6 font-black uppercase text-xs tracking-[0.3em] hover:bg-roof-charcoal hover:border hover:border-roof-red transition-all">
             Request Project Quote <ArrowRight size={14} />
           </Link>
         </div>

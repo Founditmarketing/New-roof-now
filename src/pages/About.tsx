@@ -16,21 +16,21 @@ export function About() {
         {/* Hero Section */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-28 items-center mb-20 md:mb-44">
           <motion.div {...fadeInUp}>
-            <div className="text-label text-roof-red mb-6 uppercase tracking-widest font-black">Alexandria, Louisiana</div>
+            <div className="text-label text-roof-red mb-6 uppercase tracking-widest font-black">Phoenix, Arizona</div>
             <h1 className="text-[48px] md:text-[68px] text-white mb-10 leading-[0.95]">
-              Roots In <br/>Louisiana <span className="text-stone-500 italic">Workmanship.</span>
+              Built for <br/>Arizona <span className="text-stone-500 italic">Conditions.</span>
             </h1>
             <p className="text-xl text-stone-400 font-medium leading-relaxed mb-8">
-              We started with a single ladder and a promise: treat every home like it's our mother's. Today, we're Alexandria's most trusted name in storm resilience.
+              We started with a single ladder and a promise: treat every home like it's our own. Today, we're the Valley's most trusted name in desert-grade roofing and monsoon resilience.
             </p>
             <div className="grid grid-cols-2 gap-8 border-t border-white/10 pt-10">
               <div>
                 <div className="text-4xl font-black text-white mb-2 italic">100%</div>
-                <div className="text-[10px] text-stone-400 font-black uppercase tracking-widest leading-none">Louisiana Owned & Operated</div>
+                <div className="text-[10px] text-stone-400 font-black uppercase tracking-widest leading-none">Arizona Owned & Operated</div>
               </div>
               <div>
                 <div className="text-4xl font-black text-white mb-2 italic">ZERO</div>
-                <div className="text-[10px] text-stone-400 font-black uppercase tracking-widest leading-none">Pushy Sales Gear Only Honesty</div>
+                <div className="text-[10px] text-stone-400 font-black uppercase tracking-widest leading-none">Zero Pressure — Honesty Only</div>
               </div>
             </div>
           </motion.div>
@@ -39,25 +39,25 @@ export function About() {
              <div className="absolute inset-0 bg-roof-red/20 z-10 mix-blend-overlay" />
              <img 
                src="/images/Screenshot-2026-03-05-at-10.49.04-AM-1.png" 
-               alt="Best Price Roofing — roof ridge and shingles" 
+               alt="New Roof Now — roof ridge and shingles" 
                className="w-full h-full object-cover object-top"
              />
              <div className="glass-panel absolute -bottom-8 left-0 right-0 mx-4 p-8 hidden lg:block">
                 <p className="text-xs text-white leading-relaxed italic uppercase font-bold">
                   "We believe every home deserves reliable protection at a fair price. From new installs to storm repairs, we treat every customer like family."
                 </p>
-                <div className="mt-4 text-[10px] font-black text-roof-red tracking-[0.2em]">Best Price Roofing — Alexandria, LA</div>
+                <div className="mt-4 text-[10px] font-black text-roof-red tracking-[0.2em]">New Roof Now — Phoenix, AZ</div>
              </div>
           </motion.div>
         </div>
 
         {/* Values - The Industrial Way */}
         <div className="border-t border-white/10 pt-32">
-          <div className="text-label text-stone-500 mb-16 uppercase tracking-widest font-black">The BPR Standard — Logic & Integrity</div>
+          <div className="text-label text-stone-500 mb-16 uppercase tracking-widest font-black">The NRN Standard — Logic & Integrity</div>
           <div className="grid md:grid-cols-3 gap-px bg-white/10 border border-white/10 shadow-2xl text-stone-900">
             {[
               { t: 'Safety First', d: 'OSHA compliant on every site. No shortcuts, no risks to your property or our team.', icon: ShieldCheck },
-              { t: 'Premier Gear', d: 'We only use Owens Corning and Atlas Pinnacle shingles—materials built for the Gulf Coast.', icon: Award },
+              { t: 'Premier Gear', d: 'We only use Owens Corning and Atlas Pinnacle shingles — cool-roof rated for the Sonoran Desert.', icon: Award },
               { t: 'Family Values', d: 'Transparent communication from the first inspection through final cleanup.', icon: Users },
             ].map((v, i) => (
               <div key={i} className="bg-roof-charcoal p-12 hover:bg-roof-surface transition-colors group">
@@ -73,21 +73,21 @@ export function About() {
         <div className="mt-20 py-20 md:py-40 border-t border-white/10">
            <div className="grid lg:grid-cols-2 gap-12 lg:gap-28 items-center">
               <div>
-                 <div className="text-label text-roof-red mb-6 uppercase tracking-widest font-black">Cenla Commitment</div>
+                 <div className="text-label text-roof-red mb-6 uppercase tracking-widest font-black">Valley Commitment</div>
                  <h2 className="text-4xl md:text-6xl text-white mb-8 leading-tight italic font-black uppercase tracking-tighter">
-                   Greater <br/><span className="text-white/40">Alexandria</span> <br/>Advocates.
+                   Greater <br/><span className="text-white/40">Phoenix</span> <br/>Advocates.
                  </h2>
                  <p className="text-stone-400 text-lg mb-10 leading-relaxed">
-                   We don't just work in Alexandria; we live here. After every major storm we've seen neighbors struggle through the claims process, and it's why we make insurance assistance a core part of what we do. Our goal is to ensure no one in Rapides Parish gets a sub-par roof after a catastrophe.
+                   We don't just work in Arizona — we live here. After every monsoon season we've seen neighbors battle through claims and shoddy repairs. It's why we make insurance advocacy and desert-grade quality non-negotiable. No home in the Valley deserves a cheap roof.
                  </p>
                  <div className="grid grid-cols-2 gap-6 bg-white/5 p-8 border-l-2 border-roof-red text-stone-900">
                     <div>
                        <div className="text-[10px] font-black text-stone-400 uppercase mb-2">Service Area</div>
-                       <p className="text-xs text-white uppercase font-bold italic">Alexandria • Pineville • Rapides Parish</p>
+                       <p className="text-xs text-white uppercase font-bold italic">Phoenix • Scottsdale • Mesa • Chandler</p>
                     </div>
                     <div>
                        <div className="text-[10px] font-black text-stone-400 uppercase mb-2">Location Hub</div>
-                       <p className="text-xs text-white uppercase font-bold italic">Pineville • Woodworth • Alexandria</p>
+                       <p className="text-xs text-white uppercase font-bold italic">Tempe • Gilbert • Peoria • Glendale</p>
                     </div>
                  </div>
               </div>
@@ -110,15 +110,15 @@ export function About() {
         <div className="mt-40 p-16 md:p-28 bg-roof-surface border border-white/5 relative overflow-hidden">
            <div className="industrial-grid absolute inset-0 opacity-5" />
            <div className="relative z-10 text-center max-w-3xl mx-auto">
-              <h3 className="text-3xl text-white mb-10 italic uppercase tracking-tighter font-black">The "Best Price" Logic</h3>
+              <h3 className="text-3xl text-white mb-10 italic uppercase tracking-tighter font-black">The New Roof Now Logic</h3>
               <p className="text-stone-400 text-sm md:text-base leading-relaxed mb-12 italic">
-                We believe every home deserves reliable protection at a fair price. By focusing on honest pricing and quality materials, we deliver lasting results without the runaround — no hidden fees, no pushy sales.
+                Every Arizona home deserves a roof that can handle 115°F summers, monsoon downpours, and relentless UV. We deliver that protection at an honest price — no runaround, no hidden fees, no weak materials.
               </p>
               <div className="flex flex-wrap justify-center gap-10">
                  {[
                    { l: 'Owens Corning & Atlas', s: 'Trusted Materials' },
                    { l: 'General Liability', s: 'Fully Insured' },
-                   { l: 'Licensed & Insured', s: 'Louisiana State' },
+                   { l: 'Licensed & Insured', s: 'Arizona State' },
                  ].map((stat, i) => (
                    <div key={i} className="text-center">
                       <div className="text-[9px] font-black uppercase text-roof-red mb-2 tracking-widest">{stat.s}</div>
@@ -131,15 +131,15 @@ export function About() {
       </div>
 
       {/* CTA Band */}
-      <div className="mt-40 py-24 bg-linear-to-r from-roof-red to-roof-orange relative overflow-hidden">
+      <div className="mt-40 py-24 ember-line relative overflow-hidden">
         <img src="/images/IMG_3704.png" alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover grayscale opacity-20 mix-blend-multiply pointer-events-none" />
         <div className="max-w-screen-xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10 flex flex-col md:flex-row justify-between items-center gap-10 text-center md:text-left">
            <h4 className="text-3xl md:text-5xl text-white max-w-2xl leading-[1.1] italic">
-             Ready to experience <br/>the <span className="font-black not-italic underline decoration-4 underline-offset-8">Best Price</span> difference?
+             Ready to experience <br/>the <span className="font-black not-italic underline decoration-4 underline-offset-8">New Roof Now</span> difference?
            </h4>
            <Link 
              to="/contact" 
-             className="px-12 py-6 bg-black text-white font-black uppercase text-xs tracking-widest hover:bg-white hover:text-black transition-all shadow-2xl shrink-0"
+             className="px-12 py-6 bg-black text-white font-black uppercase text-xs tracking-widest hover:bg-roof-charcoal hover:border hover:border-white transition-all shadow-2xl shrink-0"
            >
              Schedule Free Inspection
            </Link>

@@ -15,7 +15,7 @@ export function Contact() {
             Let's <span className="text-roof-red">Talk</span> Shop.
           </h1>
           <p className="text-xl text-stone-300 max-w-2xl font-medium leading-relaxed">
-            Reach Alexandria's most trusted roofers. Free inspections, honest quotes, no pressure.
+            Reach Arizona's most trusted roofers. Free inspections, honest quotes, no pressure.
           </p>
         </motion.div>
 
@@ -31,14 +31,14 @@ export function Contact() {
                    <div className="space-y-8">
                       <div className="group">
                          <div className="text-[9px] font-black uppercase text-stone-400 mb-2 tracking-widest">Phone</div>
-                         <a href="tel:3186130072" className="text-4xl font-black italic tracking-tighter hover:text-roof-red transition-all block">318-613-0072</a>
+                         <a href="tel:4808451833" className="text-4xl font-black italic tracking-tighter hover:text-roof-red transition-all block">(480) 845-1833</a>
                          <div className="text-[10px] text-stone-400 mt-2 font-mono uppercase">Available Mon – Sat</div>
                       </div>
 
                       <div className="group">
                          <div className="text-[9px] font-black uppercase text-stone-400 mb-2 tracking-widest">Address</div>
-                         <div className="text-xl font-bold text-stone-300">217 Brevard Ct, Alexandria, LA 71303</div>
-                         <div className="text-[10px] text-stone-400 mt-1 uppercase leading-tight font-medium">Serving Alexandria • Pineville • Woodworth • Ball • Boyce</div>
+                         <div className="text-xl font-bold text-stone-300">Phoenix, AZ & the Greater Valley</div>
+                         <div className="text-[10px] text-stone-400 mt-1 uppercase leading-tight font-medium">Serving Phoenix • Scottsdale • Mesa • Chandler • Tempe • Gilbert</div>
                       </div>
                    </div>
                 </div>
@@ -51,7 +51,7 @@ export function Contact() {
                       </div>
                       <div>
                          <div className="text-[8px] font-black uppercase text-stone-500 mb-2">Status</div>
-                         <div className="text-xs font-black uppercase text-stone-300">Licensed & Insured — Louisiana</div>
+                         <div className="text-xs font-black uppercase text-stone-300">Licensed & Insured — Arizona</div>
                       </div>
                    </div>
                 </div>
@@ -73,7 +73,7 @@ export function Contact() {
                       </div>
                       <div className="space-y-3">
                          <label className="text-xs font-black uppercase tracking-widest text-stone-300">Phone Number</label>
-                         <input type="tel" className="w-full bg-transparent border-b border-white/20 px-0 py-2 focus:border-roof-red focus:outline-none transition-all font-mono text-lg text-white placeholder:text-stone-600" placeholder="318-xxx-xxxx" />
+                         <input type="tel" className="w-full bg-transparent border-b border-white/20 px-0 py-2 focus:border-roof-red focus:outline-none transition-all font-mono text-lg text-white placeholder:text-stone-600" placeholder="(480) xxx-xxxx" />
                       </div>
                    </div>
 
@@ -92,7 +92,7 @@ export function Contact() {
                       <textarea rows={3} className="w-full bg-transparent border-b border-white/20 px-0 py-2 focus:border-roof-red focus:outline-none transition-all font-medium text-stone-300 placeholder:text-stone-600" placeholder="Tell us about your roof — leak, storm damage, age, etc." />
                    </div>
 
-                   <button className="h-20 w-full md:w-auto md:px-16 bg-roof-red text-white hover:bg-white hover:text-black transition-all group overflow-hidden relative font-black uppercase text-xs tracking-[0.3em]">
+                   <button className="h-20 w-full md:w-auto md:px-16 bg-roof-red text-white hover:bg-roof-charcoal hover:border hover:border-roof-red transition-all group overflow-hidden relative font-black uppercase text-xs tracking-[0.3em]">
                       <span className="relative z-10 flex items-center justify-center gap-4">
                         Get My Free Inspection <Send size={14} />
                       </span>
@@ -103,15 +103,21 @@ export function Contact() {
         </div>
 
         {/* Map area */}
-        <div className="mt-20 h-96 bg-black relative group overflow-hidden border border-white/5">
-           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80')] opacity-20 grayscale group-hover:scale-105 transition-transform duration-1000" />
-           <div className="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent" />
-           <div className="absolute bottom-12 left-12">
+        <div className="mt-20 h-96 relative overflow-hidden border border-white/5">
+           <iframe
+             src="https://maps.google.com/maps?q=Apache+Junction,+AZ+85120&t=&z=11&ie=UTF8&iwloc=&output=embed"
+             className="w-full h-full border-0 grayscale opacity-60"
+             allowFullScreen
+             loading="lazy"
+             title="New Roof Now AZ — Service Area Map"
+           />
+           <div className="absolute inset-0 bg-linear-to-t from-black via-black/30 to-transparent pointer-events-none" />
+           <div className="absolute bottom-12 left-12 pointer-events-none">
               <div className="flex items-center gap-2 mb-2">
                  <div className="w-3 h-3 bg-roof-red rounded-full animate-pulse" />
                  <span className="text-label text-roof-red">Service Area</span>
               </div>
-              <h4 className="text-2xl font-black italic tracking-tighter uppercase">Alexandria, Louisiana <br/><span className="text-stone-300 text-lg">217 Brevard Ct — Serving All of Cenla</span></h4>
+              <h4 className="text-2xl font-black italic tracking-tighter uppercase">Phoenix, Arizona <br/><span className="text-stone-300 text-lg">Serving the Greater Valley</span></h4>
            </div>
         </div>
       </div>

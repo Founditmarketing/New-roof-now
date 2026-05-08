@@ -19,7 +19,7 @@ export function Services() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-32"
         >
-          <div className="text-label text-roof-red mb-6 uppercase tracking-widest font-black">Central Louisiana's Full-Spectrum Coverage</div>
+          <div className="text-label text-roof-red mb-6 uppercase tracking-widest font-black">Arizona's Full-Spectrum Coverage</div>
           <h1 className="text-[56px] md:text-[90px] text-white leading-none mb-8">
             Superior <span className="text-stone-500 italic">Solutions.</span>
           </h1>
@@ -82,7 +82,7 @@ export function Services() {
                 { t: 'Multi-Family', d: 'Expert handling of apartment complexes and HOA communities.' },
                 { t: 'Flat Roofing', d: 'Low-slope and flat roof solutions for residential and commercial properties.' },
                 { t: 'Forensic Audit', d: 'Detailed post-storm damage reports for legal/insurance use.' },
-                { t: 'Ridge Shield', d: 'Custom ventilation upgrades to reduce Louisiana attic heat.' },
+                { t: 'Ridge Shield', d: 'Custom ventilation upgrades to combat Arizona attic heat loads above 150°F.' },
               ].map((cap, i) => (
                 <div key={i} className="bg-black p-10 group hover:bg-roof-red/5 transition-colors">
                    <div className="text-white font-black text-xl mb-4 italic uppercase tracking-tighter group-hover:text-roof-red transition-colors">{cap.t}</div>
@@ -97,7 +97,7 @@ export function Services() {
            <div className="hidden" />
            <div className="relative z-10 text-center mb-16">
               <div className="text-label text-roof-red mb-4 uppercase tracking-[0.3em]">Material Protocol</div>
-              <h3 className="text-4xl md:text-6xl text-roof-charcoal font-black uppercase tracking-tighter italic">Standard vs <span className="text-roof-red">BPR Spec.</span></h3>
+              <h3 className="text-4xl md:text-6xl text-roof-charcoal font-black uppercase tracking-tighter italic">Standard vs <span className="text-roof-red">NRN Spec.</span></h3>
            </div>
            
            <div className="relative z-10 overflow-x-auto">
@@ -106,7 +106,7 @@ export function Services() {
                     <tr className="border-b-2 border-roof-charcoal text-[10px] font-black uppercase tracking-widest text-stone-400">
                        <th className="py-6">Component</th>
                        <th className="py-6">Standard Contractor</th>
-                       <th className="py-6 text-roof-red">BPR Industrial Spec</th>
+                       <th className="py-6 text-roof-red">NRN Desert Spec</th>
                     </tr>
                  </thead>
                  <tbody className="text-xs md:text-sm font-bold uppercase tracking-tight text-roof-charcoal">
@@ -133,13 +133,13 @@ export function Services() {
            <div className="shingle-texture absolute inset-0 opacity-5" />
            <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h3 className="text-3xl text-white mb-6 italic">Dealing with <span className="text-roof-red not-italic font-black">Storm Damage?</span></h3>
+                <h3 className="text-3xl text-white mb-6 italic">Dealing with <span className="text-roof-red not-italic font-black">Monsoon Damage?</span></h3>
                 <p className="text-stone-300 font-medium leading-relaxed uppercase tracking-widest text-xs">
-                  We specialize in the Louisiana insurance landscape. Our experts walk you through every step of the claim process to ensure full coverage for your loss.
+                  We specialize in the Arizona insurance landscape. Our experts walk you through every step of the claim process to ensure full coverage after monsoon, hail, or haboob damage.
                 </p>
               </div>
               <div className="flex justify-end">
-                 <Link to="/services/insurance-claim-assistance" className="px-10 py-5 border border-white text-white font-black uppercase text-xs tracking-widest hover:bg-white hover:text-black transition-all">
+                 <Link to="/services/insurance" className="px-10 py-5 border border-white text-white font-black uppercase text-xs tracking-widest hover:bg-roof-red hover:border-roof-red transition-all">
                     Claim Assistance Dept
                  </Link>
               </div>

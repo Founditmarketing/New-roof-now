@@ -22,17 +22,13 @@ export function Navbar() {
   }, [location]);
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-roof-surface/95 shadow-2xl py-2 backdrop-blur-md border-b border-white/10' : 'bg-transparent py-6 text-white'
-      }`}
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-roof-surface/95 shadow-2xl py-2 backdrop-blur-md border-b border-white/10 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center group">
             <img
               src="/logo.png"
-              alt="Best Price Roofing"
+              alt="New Roof Now"
               className={`object-contain transition-all duration-300 brightness-0 invert ${isScrolled ? 'h-10' : 'h-14'}`}
             />
           </Link>
@@ -75,10 +71,11 @@ export function Navbar() {
               </div>
 
               <Link to="/gallery" className="text-label hover:text-roof-red transition-colors">Gallery</Link>
+              <Link to="/contact" className="text-label hover:text-roof-red transition-colors">Contact</Link>
             </div>
 
             <div className="flex items-center gap-4 border-l border-white/10 pl-8">
-              <a href="tel:3186130072" className="text-sm font-mono text-stone-300 hover:text-white transition-colors">318-613-0072</a>
+              <a href="tel:4808451833" className="text-sm font-mono text-stone-300 hover:text-white transition-colors">(480) 845-1833</a>
               <Link 
                 to="/contact" 
                 className="bg-roof-red text-white px-5 py-2 font-black text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all"
@@ -115,8 +112,8 @@ export function Navbar() {
               </div>
               <Link to="/gallery" className="font-heading text-lg">Gallery</Link>
               <Link to="/contact" className="font-heading text-lg">Contact</Link>
-              <a href="tel:3186130072" className="flex items-center gap-2 font-heading text-roof-red text-xl">
-                <Phone size={20} /> 318-613-0072
+              <a href="tel:4808451833" className="flex items-center gap-2 font-heading text-roof-red text-xl">
+                <Phone size={20} /> (480) 845-1833
               </a>
             </div>
           </motion.div>

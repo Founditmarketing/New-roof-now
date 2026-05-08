@@ -12,79 +12,79 @@ export interface Service {
 export const SERVICES: Service[] = [
   {
     id: 'installations',
-    title: 'Roofing Installations',
-    shortDescription: 'New high-quality roof installations and full replacements for Louisiana homes.',
-    fullDescription: 'Our hallmark service. We provide complete roof replacements and new construction installations using premium materials that are engineered to withstand the unique challenges of the Gulf Coast climate.',
+    title: 'Re-Roofing',
+    shortDescription: 'Complete tear-off and re-roofing in tile, shingle, metal, foam, and flat systems.',
+    fullDescription: 'Our flagship service. We hand-measure every roof — no satellite guesswork. Whether tile, shingle, metal, foam, or flat, we deliver a full tear-off and precision re-roof built for Arizona\'s extreme summers and monsoon season.',
     icon: 'Hammer',
     image: '/images/IMG_3704.png',
     benefits: [
-      'Premium Owens Corning & Atlas shingles',
-      'Enhanced storm-resistant underlayment',
-      'Full factory warranties',
-      'Precise, professional installation'
+      'Hand-measured estimates — no satellite shortcuts',
+      'Tile, shingle, metal, foam & flat systems',
+      '20+ years Arizona roofing experience',
+      '18 months same-as-cash financing via Hearth'
     ],
     process: [
-      { step: 'Inspection', description: 'Comprehensive assessment of your current structure.' },
-      { step: 'Material Selection', description: 'Choose colors and textures that match your home.' },
-      { step: 'Installation', description: 'Our expert crew replaces your roof efficiently.' },
-      { step: 'Cleanup', description: 'We leave your property spotless.' }
+      { step: 'Hand Measurement', description: 'We walk the roof ourselves — accurate to the square foot.' },
+      { step: 'Material Selection', description: 'Choose from tile, shingle, metal, foam, or flat systems.' },
+      { step: 'Tear-Off & Install', description: 'Full removal and precision re-roof by our experienced crew.' },
+      { step: 'Final Walkthrough', description: 'We inspect every detail with you before signing off.' }
     ]
   },
   {
     id: 'repair',
     title: 'Roof Repair',
-    shortDescription: 'Fast, reliable fixes for leaks, missing shingles, and minor storm damage.',
-    fullDescription: 'Not every roof needs a full replacement. We provide honest assessments and high-quality repairs that extend the life of your existing roof and protect your interior from water damage.',
+    shortDescription: 'Fast, honest repairs for leaks, monsoon damage, and thermal cracking.',
+    fullDescription: 'Not every roof needs a full replacement. We provide honest assessments and quality repairs — from patching monsoon damage to fixing thermal cracks and worn flashing. If a repair is all you need, that\'s all we\'ll recommend.',
     icon: 'Wrench',
     image: '/images/Untitled-design-4.png',
     benefits: [
-      'Stop leaks immediately',
-      'Structural integrity preservation',
-      'Cost-effective solutions',
-      'Matching materials for seamless patches'
+      'Honest assessment — repair vs. replace',
+      'Leak detection and emergency patches',
+      'Tile reset and re-sealing',
+      'Coating and sealant application'
     ],
     process: [
-      { step: 'Leak Trap', description: 'Locate and secure the source of water intrusion.' },
+      { step: 'Inspection', description: 'Locate the source of damage or intrusion.' },
       { step: 'Assessment', description: 'Determine if repair is viable or replacement needed.' },
-      { step: 'Precision Fix', description: 'Skilled application of new shingles or flashing.' }
+      { step: 'Precision Fix', description: 'Targeted repair using matched materials.' }
     ]
   },
   {
     id: 'shingles',
-    title: 'Premium Shingles',
-    shortDescription: 'Specializing in Owens Corning and Atlas Pinnacle Pristine materials.',
-    fullDescription: 'We dont settle for mediocre products. We specialize in top-tier shingle technology featuring Scotchgard Protector for algae resistance and heavy-duty weights for high wind tolerance.',
+    title: 'Shade Structures',
+    shortDescription: 'Custom wood patios, aluminum pergolas, awnings, and steel structures.',
+    fullDescription: 'Arizona living means outdoor living. We design and build custom wood patios, aluminum pergolas, awnings, steel structures, and walk decks that extend your usable space and shield you from the desert sun.',
     icon: 'Shield',
     image: '/images/Untitled-design-12.png',
     benefits: [
-      'Algae-resistant technology',
-      'Stunning architectural aesthetic',
-      'Class 4 impact resistance (optional)',
-      'High-wind speed ratings'
+      'Custom wood patio construction',
+      'Aluminum pergolas and awnings',
+      'Steel structures and walk decks',
+      'Engineered for Arizona heat and wind loads'
     ],
     process: [
-      { step: 'Selection', description: 'Compare weights, colors, and durability.' },
-      { step: 'Estimation', description: 'Accurate pricing based on chosen material.' },
-      { step: 'Expert Install', description: 'Manufacturer-approved application techniques.' }
+      { step: 'Design Consult', description: 'We plan the structure around your space and needs.' },
+      { step: 'Engineering', description: 'Proper load calculations for Arizona wind and heat.' },
+      { step: 'Build & Finish', description: 'Expert construction with quality materials and clean finish.' }
     ]
   },
   {
     id: 'insurance',
-    title: 'Insurance Claim Assistance',
-    shortDescription: 'Expert guidance through the storm damage insurance process.',
-    fullDescription: 'Dealing with insurance adjusters can be stressful. We provide detailed reports, meet with adjusters on-site, and ensure you get the full coverage you deserve after storm damage.',
+    title: 'Commercial Roofing',
+    shortDescription: 'Full-service commercial roofing systems, coatings, and maintenance programs.',
+    fullDescription: 'From retail centers to warehouses, we handle commercial roofing with the same precision as residential. Silicone and acrylic coatings, TPO, modified bitumen, and built-up systems — all backed by 20+ years of Arizona expertise.',
     icon: 'ClipboardCheck',
     image: '/images/IMG_3700.png',
     benefits: [
-      'On-site adjuster meetings',
-      'Detailed damage reports',
-      'Maximum claim value optimization',
-      'Zero upfront cost for assessments'
+      'Silicone and acrylic roof coatings',
+      'TPO and modified bitumen systems',
+      'Preventive maintenance programs',
+      'Minimal business disruption scheduling'
     ],
     process: [
-      { step: 'Storm Inspection', description: 'Identify wind and hail damage often missed.' },
-      { step: 'Filing', description: 'Help you submit the claim with proper documentation.' },
-      { step: 'Adjuster Meeting', description: 'We advocate for you during the onsite visit.' }
+      { step: 'Site Survey', description: 'Full commercial roof assessment and measurements.' },
+      { step: 'System Recommendation', description: 'Best system for your building type and budget.' },
+      { step: 'Professional Install', description: 'Efficient crew work scheduled around your operations.' }
     ]
   }
 ];

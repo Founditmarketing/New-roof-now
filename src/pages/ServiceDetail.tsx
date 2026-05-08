@@ -92,7 +92,7 @@ export function ServiceDetail() {
                 Get a Free Quote <ArrowRight size={14} className="inline ml-2" />
               </Link>
               <a
-                href="tel:3186130072"
+                href="tel:4808451833"
                 className="flex items-center gap-3 group"
               >
                 <div className="w-12 h-12 border border-white/20 flex items-center justify-center group-hover:bg-roof-red group-hover:border-roof-red transition-all shrink-0">
@@ -100,7 +100,7 @@ export function ServiceDetail() {
                 </div>
                 <div>
                   <div className="text-[10px] font-black uppercase tracking-widest text-stone-400">Call Us Directly</div>
-                  <div className="text-xl font-black text-white group-hover:text-roof-red transition-colors">318-613-0072</div>
+                  <div className="text-xl font-black text-white group-hover:text-roof-red transition-colors">(480) 845-1833</div>
                 </div>
               </a>
             </div>
