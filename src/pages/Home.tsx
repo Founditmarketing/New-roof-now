@@ -75,7 +75,7 @@ export function Home() {
               <span className="text-white/60 text-4xl md:text-5xl">Every time.</span>
             </h1>
             <p className="text-white/70 text-xl mb-10 leading-relaxed max-w-lg">
-              Craven Construction builds roofs engineered for 115°F summers, Sonoran Desert UV, and monsoon season punishment. Tile, shingle, metal, foam, flat, patios, pergolas and more. Financing available.
+              Roofing Removal & Replacement of AZ builds roofs engineered for 115°F summers, Sonoran Desert UV, and monsoon season punishment. Tile, shingle, metal, foam, flat, patios, pergolas and more. Financing available.
             </p>
             <div className="flex flex-wrap gap-4 mb-12">
               <a href="tel:4808451833" id="hero-call-btn" className="btn-brick flex items-center gap-3 text-base"><Phone size={18}/> (480) 845-1833</a>
@@ -94,7 +94,7 @@ export function Home() {
 
         {/* Right: Craven Construction project photo */}
         <div className="relative hidden lg:block">
-          <img src="/images/nrn-hero.png" alt="Craven Construction Arizona roofing project" className="absolute inset-0 w-full h-full object-cover object-top" />
+          <img src="/images/nrn-hero.png" alt="Roofing Removal & Replacement of AZ project" className="absolute inset-0 w-full h-full object-cover object-top" />
           <div className="absolute inset-0 bg-gradient-to-r from-az-blue via-az-blue/10 to-transparent w-24"/>
           <div className="absolute bottom-10 right-10 bg-az-blue/90 border border-az-gold/30 p-5 backdrop-blur-sm">
             <div className="text-az-gold font-mono-label text-xs font-bold uppercase tracking-widest mb-1">Arizona Climate</div>
@@ -219,7 +219,7 @@ export function Home() {
             '/images/nrn-project4.webp',
           ].map((src, i) => (
             <div key={i} className="overflow-hidden group border-r border-white/10 last:border-0">
-              <img src={src} alt={`Craven Construction project ${i+1}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
+              <img src={src} alt={`Roofing Removal & Replacement of AZ project ${i+1}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
             </div>
           ))}
         </div>
@@ -237,7 +237,7 @@ export function Home() {
             <blockquote className="font-display text-4xl md:text-5xl text-az-text leading-tight mb-8">
               "We handle all aspects of residential and commercial roofing. From new construction to monsoon damage repairs — you can count on our experts to get it done <em className="text-az-gold">right the first time.</em>"
             </blockquote>
-            <div className="text-xs font-bold text-az-gold uppercase tracking-widest mb-10">Randy Craven — Owner, Craven Construction</div>
+            <div className="text-xs font-bold text-az-gold uppercase tracking-widest mb-10">Randy Craven — Owner, Roofing Removal & Replacement of AZ</div>
             <ul className="space-y-3">
               {['Hand-measured estimates — no satellite shortcuts', 'Owens Corning, GAF, Eagle, Malarkey & Westlake materials', '18-month same-as-cash financing through Hearth', 'We meet insurance adjusters on-site for storm claims', 'Zero-debris cleanup guarantee on every job', 'Bilingual staff — Habla Español'].map((item,i)=>(
                 <li key={i} className="flex items-start gap-3">
@@ -248,7 +248,7 @@ export function Home() {
             </ul>
           </motion.div>
           <motion.div {...fu} transition={{delay:0.15}} className="relative">
-            <img src="/images/nrn-office.jpg" alt="Craven Construction team" className="w-full h-[500px] object-cover object-center"/>
+            <img src="/images/nrn-office.jpg" alt="Roofing Removal & Replacement of AZ team" className="w-full h-[500px] object-cover object-center"/>
             <div className="absolute -bottom-6 -right-6 bg-az-blue p-8 hidden lg:block border-t-4 border-az-gold">
               <div className="font-display text-4xl text-white mb-1">20+</div>
               <div className="text-xs font-bold uppercase tracking-wider text-az-gold">Years in Arizona</div>
@@ -351,7 +351,7 @@ export function Home() {
       {/* ── BOTTOM BAR ── */}
       <div className="bg-az-dune border-t border-az-border py-4 px-6">
         <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-az-rock font-mono-label">
-          <span>© 2026 Craven Construction — Roofing Removal & Replacement of AZ. All rights reserved.</span>
+          <span>© 2026 Roofing Removal & Replacement of AZ. All rights reserved.</span>
           <span>ROC #311721 · ROC #315169 · BBB A+ · Apache Junction, AZ 85120</span>
         </div>
       </div>

@@ -21,7 +21,7 @@ export function About() {
                 Built for<br /><em className="text-az-gold-light">Arizona</em><br />Conditions.
               </h1>
               <p className="text-white/70 text-lg leading-relaxed mb-10">
-                With over two decades of residential and commercial experience, Craven Construction is a dedicated roofing contractor providing honest, reliable service across Southeast Phoenix, Pinal County and beyond. From new construction installs to monsoon storm damage repairs — we get the job done right the first time.
+                With over two decades of residential and commercial experience, Roofing Removal & Replacement of AZ is a dedicated roofing contractor providing honest, reliable service across Southeast Phoenix, Pinal County and beyond. From new construction installs to monsoon storm damage repairs — we get the job done right the first time.
               </p>
               <div className="grid grid-cols-2 gap-8 border-t border-white/15 pt-10">
                 <div>
@@ -38,7 +38,7 @@ export function About() {
             <motion.div {...fadeUp} transition={{ delay: 0.15 }} className="relative">
               <img
                 src="/images/nrn-standing-seam.jpg"
-                alt="Craven Construction standing seam metal roof — Paradise Valley, AZ"
+                alt="Roofing Removal & Replacement of AZ standing seam metal roof — Paradise Valley, AZ"
                 className="w-full h-[520px] object-cover border border-white/10"
               />
               <div className="bg-az-gold-pale border border-az-gold/30 p-8 hidden lg:block mt-0">
