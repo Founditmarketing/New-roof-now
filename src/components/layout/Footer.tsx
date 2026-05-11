@@ -14,7 +14,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="block mb-6">
-              <img src="/images/rrr-az-logo.png" alt="Roofing Removal & Replacement of AZ" className="h-12 object-contain" />
+              <img src="/images/rrr-az-logo.png" alt="Roofing Removal & Replacement of AZ" className="h-36 object-contain" />
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-3">
               Arizona-built roofing for Arizona conditions. Serving Apache Junction, Mesa, Gilbert, Chandler and the Greater Valley since day one.
