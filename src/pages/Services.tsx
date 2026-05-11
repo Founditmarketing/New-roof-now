@@ -32,10 +32,16 @@ export function Services() {
           {SERVICES.map((service, i) => (
             <motion.div key={service.id} {...fadeUp} transition={{ delay: i * 0.1 }}
               className="group grid lg:grid-cols-5 gap-0 bg-white border border-az-border overflow-hidden hover:shadow-lg hover:shadow-az-gold/10 transition-shadow">
-              <div className="lg:col-span-2 h-64 lg:h-auto overflow-hidden">
-                <img src={service.image} alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              </div>
+              {service.image ? (
+                <div className="lg:col-span-2 h-64 lg:h-auto overflow-hidden">
+                  <img src={service.image} alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                </div>
+              ) : (
+                <div className="lg:col-span-2 h-64 lg:h-auto bg-az-blue-mid flex items-center justify-center">
+                  <span className="font-mono-label text-white/15 text-xs uppercase tracking-widest">Photo Coming Soon</span>
+                </div>
+              )}
               <div className="lg:col-span-3 p-10 md:p-14 flex flex-col">
                 <div className="flex justify-between items-start mb-4">
                   <h2 className="font-display text-4xl text-az-text">{service.title}</h2>
@@ -128,7 +134,7 @@ export function Services() {
             </p>
           </div>
           <div className="flex justify-start lg:justify-end">
-            <Link to="/services/insurance"
+            <Link to="/services/commercial"
               className="border-2 border-white text-white px-10 py-5 font-bold text-sm uppercase tracking-widest hover:bg-white hover:text-az-blue transition-all">
               Commercial &amp; Claim Help
             </Link>

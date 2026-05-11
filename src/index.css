@@ -165,6 +165,18 @@ body {
 .on-navy h1,.on-navy h2,.on-navy h3,.on-navy h4,
 .on-navy p,.on-navy span,.on-navy li { color: inherit; }
 
+/* ── Force white text on ALL blue backgrounds ── */
+/* Prevents dark body color (#1A1208) from bleeding into blue sections */
+.bg-az-blue,
+.bg-az-blue-mid,
+.bg-az-blue-deep,
+.bg-nrn-navy,
+.bg-nrn-navy-mid,
+.bg-nrn-navy-deep {
+  color: white;
+}
+
+
 /* Arizona sun ray divider */
 .az-ray-divider {
   height: 4px;

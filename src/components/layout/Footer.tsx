@@ -60,8 +60,8 @@ export function Footer() {
               {[
                 { to: '/services/installations', label: 'Re-Roofing' },
                 { to: '/services/repair', label: 'Roof Repair' },
-                { to: '/services/shingles', label: 'Shade Structures' },
-                { to: '/services/insurance', label: 'Commercial Roofing' },
+                { to: '/services/shade-structures', label: 'Shade Structures' },
+                { to: '/services/commercial', label: 'Commercial Roofing' },
               ].map(item => (
                 <li key={item.to}>
                   <Link to={item.to} className="text-sm text-white/70 hover:text-az-gold-light transition-colors font-medium">

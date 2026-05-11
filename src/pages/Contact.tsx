@@ -106,20 +106,20 @@ export function Contact() {
         </div>
 
         {/* Map */}
-        <div className="h-80 relative overflow-hidden border border-t-0 border-az-border mb-0">
+        <div className="h-96 relative overflow-hidden border border-t-0 border-az-border mb-0">
           <iframe
-            src="https://maps.google.com/maps?q=Apache+Junction,+AZ+85120&t=&z=11&ie=UTF8&iwloc=&output=embed"
-            className="w-full h-full border-0 grayscale opacity-70"
+            src="https://maps.google.com/maps?q=710+N+Ironwood+Dr,+Apache+Junction,+AZ+85120&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            className="w-full h-full border-0"
             allowFullScreen loading="lazy"
-            title="New Roof Now AZ — Service Area Map"
+            title="Craven Construction — 710 N Ironwood Dr, Apache Junction AZ"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-az-sand/60 via-transparent to-transparent pointer-events-none" />
-          <div className="absolute bottom-8 left-8 pointer-events-none">
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-az-sand/80 via-transparent to-transparent h-24 pointer-events-none" />
+          <div className="absolute bottom-6 left-6 pointer-events-none">
             <div className="flex items-center gap-2 mb-1">
               <div className="w-2.5 h-2.5 bg-az-gold rounded-full animate-pulse" />
-              <span className="text-xs font-bold uppercase tracking-widest text-az-gold font-mono-label">Service Area</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-az-gold font-mono-label drop-shadow">Our Location</span>
             </div>
-            <h4 className="font-display text-2xl text-az-text">Phoenix, Arizona<br /><span className="text-az-rock text-lg font-normal">Serving the Greater Valley</span></h4>
+            <h4 className="font-display text-xl text-az-text drop-shadow-sm">710 N Ironwood Dr<br /><span className="text-az-rock text-base font-normal">Apache Junction, AZ 85120</span></h4>
           </div>
         </div>
 

@@ -12,11 +12,11 @@ export function ServiceDetail() {
   return (
     <div className="bg-az-sand pt-[73px] min-h-screen">
 
-      {/* Hero */}
-      <section className="relative h-[55vh] overflow-hidden">
-        <img src={service.image} className="w-full h-full object-cover" alt={service.title} />
-        <div className="absolute inset-0 bg-gradient-to-t from-az-blue-deep/90 via-az-blue/40 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 pb-14">
+      {/* Hero — placeholder until real photos are sourced */}
+      <section className="relative h-[40vh] overflow-hidden bg-az-blue-mid flex items-center justify-center">
+        <div className="absolute inset-0 opacity-[0.06] pointer-events-none"
+          style={{backgroundImage: 'repeating-linear-gradient(45deg, #F5B31A 0px, #F5B31A 2px, transparent 2px, transparent 40px)'}} />
+        <div className="absolute bottom-0 left-0 right-0 pb-14 relative z-10">
           <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
             <Link to="/services"
               className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white border border-white/20 text-xs font-bold uppercase tracking-widest px-4 py-2 mb-6 hover:bg-az-gold hover:border-az-gold transition-all">
@@ -104,8 +104,8 @@ export function ServiceDetail() {
             {related.map(s => (
               <Link key={s.id} to={`/services/${s.id}`}
                 className="group border border-az-border bg-white overflow-hidden hover:shadow-md hover:shadow-az-gold/10 hover:border-az-gold transition-all">
-                <div className="h-44 overflow-hidden">
-                  <img src={s.image} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div className="h-44 bg-az-blue-mid flex items-center justify-center">
+                  <span className="font-mono-label text-white/15 text-xs uppercase tracking-widest">Photo Coming Soon</span>
                 </div>
                 <div className="p-6 flex items-center justify-between">
                   <span className="font-display text-xl text-az-text group-hover:text-az-gold transition-colors">{s.title}</span>

@@ -36,11 +36,10 @@ export function About() {
             </motion.div>
 
             <motion.div {...fadeUp} transition={{ delay: 0.15 }} className="relative">
-              <img
-                src="/images/Screenshot-2026-03-05-at-10.49.04-AM-1.png"
-                alt="New Roof Now roof ridge and shingles"
-                className="w-full h-[520px] object-cover object-top border border-white/10"
-              />
+              {/* Placeholder — replace with real job/crew photo */}
+              <div className="w-full h-[520px] bg-az-blue-mid flex items-center justify-center border border-white/10">
+                <span className="font-mono-label text-white/15 text-xs uppercase tracking-widest">Photo Coming Soon</span>
+              </div>
               <div className="bg-az-gold-pale border border-az-gold/30 p-8 hidden lg:block mt-0">
                 <p className="text-sm text-az-text leading-relaxed italic">
                   "We believe every Arizona home deserves reliable protection at a fair price. From new installs to monsoon repairs, we treat every customer like family."
@@ -101,14 +100,9 @@ export function About() {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              {[
-                '/images/Untitled-design-3.png',
-                '/images/Untitled-design-2.png',
-                '/images/Untitled-design-16-scaled.png',
-                '/images/IMG_3716-scaled.jpg',
-              ].map((img, i) => (
-                <div key={i} className={`h-52 overflow-hidden border border-az-border ${i % 2 !== 0 ? 'translate-y-6' : ''}`}>
-                  <img src={img} alt="Local project" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              {[0,1,2,3].map((i) => (
+                <div key={i} className={`h-52 overflow-hidden border border-az-border bg-az-dune flex items-center justify-center ${i % 2 !== 0 ? 'translate-y-6' : ''}`}>
+                  <span className="font-mono-label text-az-stone text-xs uppercase tracking-widest">Photo Coming Soon</span>
                 </div>
               ))}
             </div>

@@ -1,33 +1,9 @@
-import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Camera } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
-const fadeUp = { initial: { opacity: 0, y: 24 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true }, transition: { duration: 0.6 } };
 
-const PHOTOS = [
-  { id: 1,  src: '/images/IMG_3704.png',                             title: 'Hero Crew Shot',           tag: 'Installation' },
-  { id: 2,  src: '/images/Untitled-design-4.png',                    title: 'Precision Nail Work',      tag: 'Workmanship' },
-  { id: 3,  src: '/images/Untitled-design-3.png',                    title: 'Crew on Gabled Roof',      tag: 'Installation' },
-  { id: 4,  src: '/images/Untitled-design-2.png',                    title: 'Finished Brick-House Roof',tag: 'Residential' },
-  { id: 5,  src: '/images/Untitled-design-12.png',                   title: 'Shingle Close-Up',         tag: 'Owens Corning' },
-  { id: 6,  src: '/images/Untitled-design-7.png',                    title: 'Sunset Shingle Detail',    tag: 'Premium' },
-  { id: 7,  src: '/images/IMG_3700.png',                             title: 'Commercial Project',       tag: 'Industrial' },
-  { id: 8,  src: '/images/Untitled-design-9.png',                    title: 'Roof Ridge Work',          tag: 'Installation' },
-  { id: 9,  src: '/images/Untitled-design-10.png',                   title: 'Shingle Layering',         tag: 'Workmanship' },
-  { id: 10, src: '/images/Untitled-design-11.png',                   title: 'Crew At Work',             tag: 'Team' },
-  { id: 11, src: '/images/Untitled-design-13.png',                   title: 'Atlas Pinnacle Shingles',  tag: 'Atlas' },
-  { id: 12, src: '/images/Untitled-design-14.png',                   title: 'Residential Install',      tag: 'Residential' },
-  { id: 13, src: '/images/Untitled-design-15.png',                   title: 'Roof Valley Detail',       tag: 'Workmanship' },
-  { id: 14, src: '/images/Untitled-design-16-scaled.png',            title: 'Monsoon Repair Job',       tag: 'Storm Repair' },
-  { id: 15, src: '/images/Untitled-design-17.png',                   title: 'Ridge Vent Install',       tag: 'Ventilation' },
-  { id: 16, src: '/images/Untitled-design-18.png',                   title: 'Full Replacement',         tag: 'Residential' },
-  { id: 17, src: '/images/Untitled-design-19.png',                   title: 'Eave & Fascia Work',       tag: 'Detail' },
-  { id: 18, src: '/images/Untitled-design-20.png',                   title: 'Nail Pattern Close-Up',    tag: 'Workmanship' },
-  { id: 19, src: '/images/Untitled-design-22.png',                   title: 'Completed Project',        tag: 'Finished' },
-  { id: 20, src: '/images/Untitled-design-8.png',                    title: 'Insurance Claim Site',     tag: 'Insurance' },
-  { id: 21, src: '/images/Screenshot-2026-03-05-at-10.48.38-AM.png', title: 'Aerial Site View',         tag: 'Commercial' },
-  { id: 22, src: '/images/IMG_3716-scaled.jpg',                      title: 'On-Site Crew',             tag: 'Team' },
-];
+// Photos will be added when real Craven Construction images are sourced
+const PHOTO_COUNT = 22;
 
 export function Gallery() {
   return (
@@ -68,25 +44,14 @@ export function Gallery() {
         </div>
       </div>
 
-      {/* Masonry */}
+      {/* Gallery grid — photos coming soon */}
       <section className="py-16 md:py-24">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
           <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-            {PHOTOS.map((photo, i) => (
-              <motion.div key={photo.id} {...fadeUp} transition={{ delay: (i % 9) * 0.06 }}
-                className="relative group cursor-zoom-in break-inside-avoid border border-az-border overflow-hidden bg-az-dune hover:shadow-lg hover:shadow-az-gold/10 transition-shadow">
-                <img src={photo.src} alt={photo.title}
-                  className="w-full min-h-[220px] object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-az-blue-deep/80 via-az-blue/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
-                  <span className="text-xs font-bold text-az-gold bg-az-blue-deep/60 px-2 py-1 uppercase tracking-widest self-start mb-2 font-mono-label">
-                    {photo.tag}
-                  </span>
-                  <h3 className="text-white font-display text-lg">{photo.title}</h3>
-                  <div className="flex items-center gap-2 mt-2 text-white/40 text-xs font-mono-label">
-                    <Camera size={10} /> Arizona Project Files
-                  </div>
-                </div>
-              </motion.div>
+            {[...Array(PHOTO_COUNT)].map((_, i) => (
+              <div key={i} className="break-inside-avoid border border-az-border bg-az-dune flex items-center justify-center" style={{height: `${180 + (i % 3) * 60}px`}}>
+                <span className="font-mono-label text-az-stone text-xs uppercase tracking-widest">Photo Coming Soon</span>
+              </div>
             ))}
           </div>
         </div>
@@ -117,9 +82,8 @@ export function Gallery() {
               ))}
             </ul>
           </div>
-          <div className="border border-az-border overflow-hidden">
-            <img src="/images/Untitled-design-16-scaled.png" alt="Monsoon repair site detail"
-              className="w-full aspect-square object-cover hover:scale-105 transition-transform duration-700" />
+          <div className="border border-az-border overflow-hidden bg-az-dune flex items-center justify-center h-80">
+            <span className="font-mono-label text-az-stone text-xs uppercase tracking-widest">Photo Coming Soon</span>
           </div>
         </div>
       </section>

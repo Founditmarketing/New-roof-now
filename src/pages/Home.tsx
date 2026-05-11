@@ -16,9 +16,9 @@ const CIRCLES = [
   { label: 'Shingle Roofs', src: '/images/Craven-Construction-HomepageCircles-shingle.png', to: '/services/installations' },
   { label: 'Metal Roofs', src: '/images/Craven-Construction-HomepageCircles-metal.png', to: '/services/installations' },
   { label: 'Flat Roofs', src: '/images/Craven-Construction-HomepageCircles-flat.png', to: '/services/installations' },
-  { label: 'Wood Patios', src: '/images/Craven-Construction-HomepageCircles-wood-paio.png', to: '/services/shingles' },
-  { label: 'Steel Structures', src: '/images/CravenConstruction-Steel.png', to: '/services/shingles' },
-  { label: 'Commercial', src: '/images/Craven-Construction-HomepageCircles-commercial.png', to: '/services/insurance' },
+  { label: 'Wood Patios', src: '/images/Craven-Construction-HomepageCircles-wood-paio.png', to: '/services/shade-structures' },
+  { label: 'Steel Structures', src: '/images/CravenConstruction-Steel.png', to: '/services/shade-structures' },
+  { label: 'Commercial', src: '/images/Craven-Construction-HomepageCircles-commercial.png', to: '/services/commercial' },
   { label: 'Roof Repair', src: '/images/CravenConstruction-RoofRepair.png', to: '/services/repair' },
 ];
 
@@ -92,15 +92,10 @@ export function Home() {
           </motion.div>
         </div>
 
-        {/* Right: hero image */}
-        <div className="relative hidden lg:block">
-          <img src="/images/IMG_3716-scaled.jpg" alt="Craven Construction crew on Arizona roof" className="absolute inset-0 w-full h-full object-cover object-top" />
-          <div className="absolute inset-0 bg-gradient-to-r from-az-blue via-az-blue/20 to-transparent w-20"/>
-          {/* Arizona climate badge */}
-          <div className="absolute bottom-10 right-10 bg-az-blue/90 border border-az-gold/30 p-5 backdrop-blur-sm">
-            <div className="text-az-gold font-mono-label text-xs font-bold uppercase tracking-widest mb-1">Arizona Climate</div>
-            <div className="text-white font-display text-lg">115°F Rated Materials</div>
-            <div className="text-white/50 text-xs mt-1">Monsoon. UV. Wind. Covered.</div>
+        {/* Right: placeholder — replace with real project photo */}
+        <div className="relative hidden lg:flex bg-az-blue-mid items-center justify-center">
+          <div className="text-center opacity-20">
+            <div className="font-mono-label text-white text-xs uppercase tracking-widest">Photo Coming Soon</div>
           </div>
         </div>
       </section>
@@ -145,8 +140,8 @@ export function Home() {
             {[
               { n:'01', t:'Residential Roofing', d:'Tile · Shingle · Metal · Foam · Flat · New Construction', to:'/services/installations' },
               { n:'02', t:'Roof Repair & Maintenance', d:'Leak repair · Tile reset · Flashing · Silicone & elastomeric coatings', to:'/services/repair' },
-              { n:'03', t:'Shade Structures', d:'Custom wood patios · Alumawood pergolas · Aluminum awnings · Steel structures', to:'/services/shingles' },
-              { n:'04', t:'Commercial Roofing', d:'Foam · Metal · Tile · Silicone coatings · Acrylic coatings · TPO', to:'/services/insurance' },
+              { n:'03', t:'Shade Structures', d:'Custom wood patios · Alumawood pergolas · Aluminum awnings · Steel structures', to:'/services/shade-structures' },
+              { n:'04', t:'Commercial Roofing', d:'Foam · Metal · Tile · Silicone coatings · Acrylic coatings · TPO', to:'/services/commercial' },
             ].map((s,i)=>(
               <motion.div key={i} {...fu} transition={{delay:i*0.08}}>
                 <Link to={s.to} className="group flex items-center gap-8 py-8 hover:bg-az-dune transition-colors px-2 -mx-2">
@@ -208,12 +203,12 @@ export function Home() {
         </div>
       </section>
 
-      {/* ── PHOTO COLLAGE ── */}
-      <section className="py-0 border-b border-az-border">
-        <div className="grid grid-cols-3 md:grid-cols-6 h-64 md:h-80">
-          {PHOTOS.map((src,i)=>(
-            <div key={i} className="overflow-hidden group">
-              <img src={src} alt={`Project ${i+1}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale-[20%] group-hover:grayscale-0"/>
+      {/* ── PHOTO COLLAGE — photos coming soon ── */}
+      <section className="border-b border-az-border">
+        <div className="grid grid-cols-3 md:grid-cols-6 h-48 md:h-64 bg-az-blue-mid">
+          {[...Array(6)].map((_,i) => (
+            <div key={i} className="border-r border-white/5 last:border-0 flex items-center justify-center">
+              <span className="font-mono-label text-white/10 text-xs uppercase tracking-widest">Photo</span>
             </div>
           ))}
         </div>
@@ -242,7 +237,10 @@ export function Home() {
             </ul>
           </motion.div>
           <motion.div {...fu} transition={{delay:0.15}} className="relative">
-            <img src="/images/Screenshot-2026-03-05-at-10.49.04-AM-1.png" alt="Craven Construction crew" className="w-full h-[500px] object-cover object-top"/>
+            {/* Placeholder — replace with real crew/job photo */}
+            <div className="w-full h-[500px] bg-az-blue-mid flex items-center justify-center border border-white/10">
+              <span className="font-mono-label text-white/15 text-xs uppercase tracking-widest">Photo Coming Soon</span>
+            </div>
             <div className="absolute -bottom-6 -right-6 bg-az-blue p-8 hidden lg:block border-t-4 border-az-gold">
               <div className="font-display text-4xl text-white mb-1">20+</div>
               <div className="text-xs font-bold uppercase tracking-wider text-az-gold">Years in Arizona</div>
@@ -279,9 +277,9 @@ export function Home() {
       <section className="py-14 bg-az-dune border-y border-az-border">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
           <span className="section-label block mb-8 text-center">Proud to work with the best suppliers in the industry.</span>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-14">
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
             {PARTNERS.map(p=>(
-              <img key={p.name} src={p.src} alt={p.name} className="h-9 w-auto object-contain grayscale opacity-50 hover:opacity-100 hover:grayscale-0 transition-all"/>
+              <img key={p.name} src={p.src} alt={p.name} className="h-16 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all"/>
             ))}
           </div>
         </div>
@@ -337,7 +335,7 @@ export function Home() {
             </form>
           </div>
           <div className="mt-8 text-center text-white/50 text-xs font-mono-label">
-            Or call directly: <a href="tel:4808451833" className="text-white font-bold hover:text-az-gold-light transition-colors">(480) 845-1833</a> · info@newroofaz.com · Mon–Sat
+            Or call directly: <a href="tel:4808451833" className="text-white font-bold hover:text-az-gold-light transition-colors">(480) 845-1833</a> · <a href="mailto:info@newroofaz.com" className="text-white font-bold hover:text-az-gold-light transition-colors">info@newroofaz.com</a> · Mon–Sat
           </div>
         </div>
       </section>
