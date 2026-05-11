@@ -45,7 +45,7 @@ export function About() {
                 <p className="text-sm text-az-text leading-relaxed italic">
                   "We believe every Arizona home deserves reliable protection at a fair price. From new installs to monsoon repairs, we treat every customer like family."
                 </p>
-                <div className="mt-4 text-xs font-bold text-az-gold uppercase tracking-wider">New Roof Now — Phoenix, AZ</div>
+                <div className="mt-4 text-xs font-bold text-az-gold uppercase tracking-wider">Roofing Removal & Replacement of AZ — Phoenix, AZ</div>
               </div>
             </motion.div>
           </div>
@@ -119,7 +119,7 @@ export function About() {
       {/* Credential bar */}
       <section className="py-16 bg-az-blue on-navy">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-16 text-center">
-          <h3 className="font-display text-3xl text-white mb-10 italic">The New Roof Now Logic</h3>
+          <h3 className="font-display text-3xl text-white mb-10 italic">The Roofing Removal & Replacement of AZ Logic</h3>
           <p className="text-white/60 text-sm md:text-base leading-relaxed mb-10 max-w-2xl mx-auto">
             Every Arizona home deserves a roof that handles 115°F summers, 50mph monsoon gusts, haboob sandstorms, and relentless UV. We deliver that protection at an honest price — no runaround, no hidden fees, no weak materials.
           </p>

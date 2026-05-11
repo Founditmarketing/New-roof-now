@@ -16,7 +16,7 @@ export function Navbar() {
 
         {/* Logo */}
         <Link to="/" className="shrink-0">
-          <img src="/images/CravenConstruction-Logo-white.png" alt="Craven Construction — New Roof Now" className="h-10 object-contain" />
+          <img src="/images/CravenConstruction-Logo-white.png" alt="Craven Construction — Roofing Removal & Replacement of AZ" className="h-10 object-contain" />
         </Link>
 
         {/* Desktop Nav */}

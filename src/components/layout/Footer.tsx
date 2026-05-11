@@ -14,7 +14,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="block mb-6">
-              <img src="/images/CravenConstruction-Logo-white.png" alt="Craven Construction — New Roof Now" className="h-12 object-contain" />
+              <img src="/images/CravenConstruction-Logo-white.png" alt="Craven Construction — Roofing Removal & Replacement of AZ" className="h-12 object-contain" />
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-3">
               Arizona-built roofing for Arizona conditions. Serving Apache Junction, Mesa, Gilbert, Chandler and the Greater Valley since day one.
@@ -101,7 +101,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/30 font-mono-label">
-          <span>© 2026 Craven Construction — New Roof Now. All rights reserved.</span>
+          <span>© 2026 Craven Construction — Roofing Removal & Replacement of AZ. All rights reserved.</span>
           <span>Apache Junction, AZ · Licensed, Bonded &amp; Insured</span>
         </div>
       </div>

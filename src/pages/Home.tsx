@@ -351,7 +351,7 @@ export function Home() {
       {/* ── BOTTOM BAR ── */}
       <div className="bg-az-dune border-t border-az-border py-4 px-6">
         <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-az-rock font-mono-label">
-          <span>© 2026 Craven Construction — New Roof Now. All rights reserved.</span>
+          <span>© 2026 Craven Construction — Roofing Removal & Replacement of AZ. All rights reserved.</span>
           <span>ROC #311721 · ROC #315169 · BBB A+ · Apache Junction, AZ 85120</span>
         </div>
       </div>
