@@ -1,17 +1,42 @@
 @import "tailwindcss";
 
 @theme {
-  --color-nrn-cream: #FAF7F2;
-  --color-nrn-warm: #F0E8D8;
-  --color-nrn-brick: #B8572A;
-  --color-nrn-brick-dark: #8C3F1A;
-  --color-nrn-navy: #1E2D40;
-  --color-nrn-navy-mid: #253648;
-  --color-nrn-navy-deep: #111D2A;
-  --color-nrn-gold: #D4961A;
-  --color-nrn-text: #2A1F14;
-  --color-nrn-muted: #7A6A58;
-  --color-nrn-border: #E0D5C5;
+  /* ── Arizona Flag Palette ── */
+  /* Gold / Copper rays */
+  --color-az-gold: #D4920A;
+  --color-az-gold-light: #F5B31A;
+  --color-az-gold-pale: #FEF3D0;
+  --color-az-gold-warm: #FDF0B8;
+
+  /* Blue — Arizona flag lower half */
+  --color-az-blue: #002868;
+  --color-az-blue-mid: #003580;
+  --color-az-blue-deep: #001540;
+
+  /* Copper — Arizona star & accent */
+  --color-az-copper: #B87333;
+  --color-az-copper-dark: #8B5A1A;
+
+  /* Desert neutrals — sand & stone */
+  --color-az-sand: #F9F4E8;
+  --color-az-dune: #EDE5CC;
+  --color-az-stone: #C8B99A;
+  --color-az-rock: #8C7B65;
+  --color-az-text: #1A1208;
+  --color-az-border: #DDD0B0;
+
+  /* Semantic aliases for backward compatibility */
+  --color-nrn-cream: #F9F4E8;
+  --color-nrn-warm: #EDE5CC;
+  --color-nrn-brick: #D4920A;
+  --color-nrn-brick-dark: #B87333;
+  --color-nrn-navy: #002868;
+  --color-nrn-navy-mid: #003580;
+  --color-nrn-navy-deep: #001540;
+  --color-nrn-gold: #F5B31A;
+  --color-nrn-text: #1A1208;
+  --color-nrn-muted: #8C7B65;
+  --color-nrn-border: #DDD0B0;
 
   --font-display: 'Fraunces', Georgia, serif;
   --font-sans: 'DM Sans', system-ui, sans-serif;
@@ -24,21 +49,33 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'DM Sans', system-ui, sans-serif;
-  background-color: #FAF7F2;
-  color: #2A1F14;
+  background-color: #F9F4E8;
+  color: #1A1208;
   -webkit-font-smoothing: antialiased;
 }
 
-::selection { background: #B8572A; color: white; }
+::selection { background: #D4920A; color: white; }
 
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #F0E8D8; }
-::-webkit-scrollbar-thumb { background: #B8572A; border-radius: 3px; }
+::-webkit-scrollbar-track { background: #EDE5CC; }
+::-webkit-scrollbar-thumb { background: #D4920A; border-radius: 3px; }
 
 /* Typography helpers */
 .font-display { font-family: 'Fraunces', Georgia, serif; }
 .font-sans-body { font-family: 'DM Sans', system-ui, sans-serif; }
 .font-mono-label { font-family: 'JetBrains Mono', monospace; }
+
+/* Arizona sun ray gradient — applied to hero overlays */
+.az-sun-gradient {
+  background: linear-gradient(
+    135deg,
+    #D4920A 0%,
+    #F5B31A 20%,
+    #D4920A 40%,
+    #002868 40%,
+    #002868 100%
+  );
+}
 
 /* Marquee */
 @keyframes marquee {
@@ -48,6 +85,13 @@ body {
 .marquee-track { animation: marquee 60s linear infinite; }
 .marquee-track:hover { animation-play-state: paused; }
 
+/* Subtle desert heat shimmer */
+@keyframes shimmer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+.az-shimmer { animation: shimmer 4s ease-in-out infinite; }
+
 /* Scrollbar hide */
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
@@ -55,13 +99,13 @@ body {
 /* Service card hover */
 .service-card { transition: box-shadow 0.3s ease, transform 0.3s ease; }
 .service-card:hover {
-  box-shadow: 0 16px 48px rgba(42, 31, 20, 0.12);
+  box-shadow: 0 16px 48px rgba(26, 18, 8, 0.12);
   transform: translateY(-3px);
 }
 
-/* Brick button */
+/* Gold / Copper primary button */
 .btn-brick {
-  background: #B8572A;
+  background: #D4920A;
   color: white;
   display: inline-flex;
   align-items: center;
@@ -73,12 +117,12 @@ body {
   transition: background 0.2s;
   text-decoration: none;
 }
-.btn-brick:hover { background: #8C3F1A; }
+.btn-brick:hover { background: #B87333; }
 
 /* Outline button */
 .btn-outline {
-  border: 2px solid #2A1F14;
-  color: #2A1F14;
+  border: 2px solid #1A1208;
+  color: #1A1208;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -89,23 +133,83 @@ body {
   transition: all 0.2s;
   text-decoration: none;
 }
-.btn-outline:hover { background: #2A1F14; color: white; }
+.btn-outline:hover { background: #1A1208; color: white; }
 
-/* Section label */
+/* Blue outline button */
+.btn-blue-outline {
+  border: 2px solid #002868;
+  color: #002868;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 30px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.btn-blue-outline:hover { background: #002868; color: white; }
+
+/* Section label — gold mono */
 .section-label {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #B8572A;
+  color: #D4920A;
 }
 
 /* Navy section text fixes */
 .on-navy h1,.on-navy h2,.on-navy h3,.on-navy h4,
 .on-navy p,.on-navy span,.on-navy li { color: inherit; }
 
+/* Arizona sun ray divider */
+.az-ray-divider {
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    #D4920A 0px, #D4920A 24px,
+    #F5B31A 24px, #F5B31A 48px,
+    #002868 48px, #002868 72px,
+    #002868 72px, #002868 96px
+  );
+}
+
+/* Gold badge */
+.az-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #D4920A;
+  color: white;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+}
+
+/* Process step number — gold circle */
+.step-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #D4920A;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation: none; }
   .service-card:hover { transform: none; }
+  .az-shimmer { animation: none; }
 }
