@@ -36,10 +36,11 @@ export function About() {
             </motion.div>
 
             <motion.div {...fadeUp} transition={{ delay: 0.15 }} className="relative">
-              {/* Placeholder — replace with real job/crew photo */}
-              <div className="w-full h-[520px] bg-az-blue-mid flex items-center justify-center border border-white/10">
-                <span className="font-mono-label text-white/15 text-xs uppercase tracking-widest">Photo Coming Soon</span>
-              </div>
+              <img
+                src="/images/nrn-standing-seam.jpg"
+                alt="Craven Construction standing seam metal roof — Paradise Valley, AZ"
+                className="w-full h-[520px] object-cover border border-white/10"
+              />
               <div className="bg-az-gold-pale border border-az-gold/30 p-8 hidden lg:block mt-0">
                 <p className="text-sm text-az-text leading-relaxed italic">
                   "We believe every Arizona home deserves reliable protection at a fair price. From new installs to monsoon repairs, we treat every customer like family."
@@ -100,9 +101,14 @@ export function About() {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              {[0,1,2,3].map((i) => (
-                <div key={i} className={`h-52 overflow-hidden border border-az-border bg-az-dune flex items-center justify-center ${i % 2 !== 0 ? 'translate-y-6' : ''}`}>
-                  <span className="font-mono-label text-az-stone text-xs uppercase tracking-widest">Photo Coming Soon</span>
+              {[
+                { src: '/images/nrn-tile.jpg', alt: 'Tile roof — Paradise Valley AZ' },
+                { src: '/images/nrn-wood-patio.jpg', alt: 'Wood patio — Apache Junction AZ' },
+                { src: '/images/nrn-stone-metal.jpg', alt: 'Stone coated metal roof' },
+                { src: '/images/nrn-awning.jpg', alt: 'Aluminum awning — Mesa AZ' },
+              ].map((img, i) => (
+                <div key={i} className={`h-52 overflow-hidden border border-az-border ${i % 2 !== 0 ? 'translate-y-6' : ''}`}>
+                  <img src={img.src} alt={img.alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                 </div>
               ))}
             </div>

@@ -92,10 +92,14 @@ export function Home() {
           </motion.div>
         </div>
 
-        {/* Right: placeholder — replace with real project photo */}
-        <div className="relative hidden lg:flex bg-az-blue-mid items-center justify-center">
-          <div className="text-center opacity-20">
-            <div className="font-mono-label text-white text-xs uppercase tracking-widest">Photo Coming Soon</div>
+        {/* Right: Craven Construction project photo */}
+        <div className="relative hidden lg:block">
+          <img src="/images/nrn-hero.png" alt="Craven Construction Arizona roofing project" className="absolute inset-0 w-full h-full object-cover object-top" />
+          <div className="absolute inset-0 bg-gradient-to-r from-az-blue via-az-blue/10 to-transparent w-24"/>
+          <div className="absolute bottom-10 right-10 bg-az-blue/90 border border-az-gold/30 p-5 backdrop-blur-sm">
+            <div className="text-az-gold font-mono-label text-xs font-bold uppercase tracking-widest mb-1">Arizona Climate</div>
+            <div className="text-white font-display text-lg">115°F Rated Materials</div>
+            <div className="text-white/50 text-xs mt-1">Monsoon. UV. Wind. Covered.</div>
           </div>
         </div>
       </section>
@@ -203,12 +207,19 @@ export function Home() {
         </div>
       </section>
 
-      {/* ── PHOTO COLLAGE — photos coming soon ── */}
+      {/* ── PHOTO COLLAGE ── */}
       <section className="border-b border-az-border">
-        <div className="grid grid-cols-3 md:grid-cols-6 h-48 md:h-64 bg-az-blue-mid">
-          {[...Array(6)].map((_,i) => (
-            <div key={i} className="border-r border-white/5 last:border-0 flex items-center justify-center">
-              <span className="font-mono-label text-white/10 text-xs uppercase tracking-widest">Photo</span>
+        <div className="grid grid-cols-3 md:grid-cols-6 h-48 md:h-64">
+          {[
+            '/images/nrn-standing-seam.jpg',
+            '/images/nrn-stone-metal.jpg',
+            '/images/nrn-awning.jpg',
+            '/images/nrn-steel.jpg',
+            '/images/nrn-project3.webp',
+            '/images/nrn-project4.webp',
+          ].map((src, i) => (
+            <div key={i} className="overflow-hidden group border-r border-white/10 last:border-0">
+              <img src={src} alt={`Craven Construction project ${i+1}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
             </div>
           ))}
         </div>
@@ -237,10 +248,7 @@ export function Home() {
             </ul>
           </motion.div>
           <motion.div {...fu} transition={{delay:0.15}} className="relative">
-            {/* Placeholder — replace with real crew/job photo */}
-            <div className="w-full h-[500px] bg-az-blue-mid flex items-center justify-center border border-white/10">
-              <span className="font-mono-label text-white/15 text-xs uppercase tracking-widest">Photo Coming Soon</span>
-            </div>
+            <img src="/images/nrn-office.jpg" alt="Craven Construction team" className="w-full h-[500px] object-cover object-center"/>
             <div className="absolute -bottom-6 -right-6 bg-az-blue p-8 hidden lg:block border-t-4 border-az-gold">
               <div className="font-display text-4xl text-white mb-1">20+</div>
               <div className="text-xs font-bold uppercase tracking-wider text-az-gold">Years in Arizona</div>

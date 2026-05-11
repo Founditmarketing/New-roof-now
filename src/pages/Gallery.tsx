@@ -1,9 +1,30 @@
+import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
+const fadeUp = { initial: { opacity: 0, y: 24 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true }, transition: { duration: 0.6 } };
 
-// Photos will be added when real Craven Construction images are sourced
-const PHOTO_COUNT = 22;
+// Verified Craven Construction photos — sourced from newroofaz.com and github.com/Founditmarketing/New-roof-now
+const PHOTOS = [
+  { id: 1,  src: '/images/nrn-shingle.jpg',       title: 'Foam to Shingle Conversion',    tag: 'Residential' },
+  { id: 2,  src: '/images/nrn-tile.jpg',           title: 'Mission S-Tile — Paradise Valley', tag: 'Tile Roofing' },
+  { id: 3,  src: '/images/nrn-standing-seam.jpg',  title: 'Standing Seam Metal Roof',      tag: 'Metal Roofing' },
+  { id: 4,  src: '/images/nrn-stone-metal.jpg',    title: 'Stone Coated Metal Roofing',    tag: 'Metal Roofing' },
+  { id: 5,  src: '/images/nrn-wood-patio.jpg',     title: 'Custom Wood Patio — Apache Junction', tag: 'Shade Structure' },
+  { id: 6,  src: '/images/nrn-awning.jpg',         title: 'Aluminum Awning — Mesa AZ',     tag: 'Shade Structure' },
+  { id: 7,  src: '/images/nrn-steel.jpg',          title: 'Red Iron Steel Shade Structure', tag: 'Steel Structure' },
+  { id: 8,  src: '/images/nrn-commercial.jpg',     title: 'Commercial Roofing',            tag: 'Commercial' },
+  { id: 9,  src: '/images/nrn-commercial2.jpg',    title: 'Commercial Flat Roof System',   tag: 'Commercial' },
+  { id: 10, src: '/images/nrn-project1.webp',      title: 'Residential Project — Valley',   tag: 'Residential' },
+  { id: 11, src: '/images/nrn-project2.webp',      title: 'Project Completion',            tag: 'Finished' },
+  { id: 12, src: '/images/nrn-project3.webp',      title: 'Roofing Detail Work',           tag: 'Workmanship' },
+  { id: 13, src: '/images/nrn-project4.webp',      title: 'Exterior Project',              tag: 'Residential' },
+  { id: 14, src: '/images/nrn-project5.webp',      title: 'Desert Home Roofing',           tag: 'Arizona Project' },
+  { id: 15, src: '/images/nrn-project6.webp',      title: 'Crew On Site',                  tag: 'Team' },
+  { id: 16, src: '/images/nrn-roofing.png',        title: 'Roofing Installation',          tag: 'Installation' },
+  { id: 17, src: '/images/nrn-hero.png',           title: 'Completed Arizona Home',        tag: 'Residential' },
+  { id: 18, src: '/images/nrn-office.jpg',         title: 'Craven Construction Team',      tag: 'Team' },
+];
 
 export function Gallery() {
   return (
@@ -44,14 +65,22 @@ export function Gallery() {
         </div>
       </div>
 
-      {/* Gallery grid — photos coming soon */}
+      {/* Gallery grid */}
       <section className="py-16 md:py-24">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-16">
           <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-            {[...Array(PHOTO_COUNT)].map((_, i) => (
-              <div key={i} className="break-inside-avoid border border-az-border bg-az-dune flex items-center justify-center" style={{height: `${180 + (i % 3) * 60}px`}}>
-                <span className="font-mono-label text-az-stone text-xs uppercase tracking-widest">Photo Coming Soon</span>
-              </div>
+            {PHOTOS.map((photo, i) => (
+              <motion.div key={photo.id} {...fadeUp} transition={{ delay: (i % 9) * 0.06 }}
+                className="relative group break-inside-avoid border border-az-border overflow-hidden bg-az-dune hover:shadow-lg hover:shadow-az-gold/10 transition-shadow">
+                <img src={photo.src} alt={photo.title}
+                  className="w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-az-blue-deep/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-5 flex flex-col justify-end">
+                  <span className="text-xs font-bold text-az-gold bg-az-blue-deep/60 px-2 py-1 uppercase tracking-widest self-start mb-2 font-mono-label">
+                    {photo.tag}
+                  </span>
+                  <h3 className="text-white font-display text-lg">{photo.title}</h3>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -82,8 +111,9 @@ export function Gallery() {
               ))}
             </ul>
           </div>
-          <div className="border border-az-border overflow-hidden bg-az-dune flex items-center justify-center h-80">
-            <span className="font-mono-label text-az-stone text-xs uppercase tracking-widest">Photo Coming Soon</span>
+          <div className="border border-az-border overflow-hidden">
+            <img src="/images/nrn-commercial2.jpg" alt="Commercial roofing project detail"
+              className="w-full aspect-square object-cover hover:scale-105 transition-transform duration-700" />
           </div>
         </div>
       </section>
